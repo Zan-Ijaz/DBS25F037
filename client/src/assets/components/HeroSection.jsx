@@ -97,7 +97,7 @@ const HeroSection = () => {
       <div className="fSection w-full flex flex-col  my-auto items-left sm:px-10 py-12">
         {/* LEFT SIDE */}
       <div className="fSection w-full flex flex-col justify-center my-auto text-center items-left sm:px-10 lg:px-20 py-12">
-        <h1 className="text-4xl font-bold text-black text-left mb-6">
+        <h1 className="text-4xl font-bold text-black text-left mb-6 ">
           Connecting clients in need to freelancers
         </h1>
 

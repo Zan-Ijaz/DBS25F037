@@ -1,9 +1,21 @@
 import React, { useState } from "react";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, Check } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formOpen, setFormOpen] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
 
+  const toggleForm = () => {
+    setFormOpen(!formOpen);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
   return (
     <nav className="w-full py-4 px-6 bg-white sticky top-0 z-50">
       <div className="flex justify-between items-center">
@@ -39,8 +51,8 @@ const Navbar = () => {
           <button className="text-sm px-4 py-1 border border-green-600 text-green-600 rounded-full hover:bg-green-50">
             Login
           </button>
-          <button className="text-sm px-4 py-1 bg-green-600 text-white rounded-full hover:bg-green-700">
-            Join Us
+          <button className="text-sm px-4 py-1 bg-green-600 text-white rounded-full hover:bg-green-700" onClick={() => setFormOpen(true)}>
+            Join
           </button>
         </div>
 
@@ -76,12 +88,89 @@ const Navbar = () => {
             <button className="text-sm px-4 py-2 border border-green-600 text-green-600 rounded-full hover:bg-green-50">
               Login
             </button>
-            <button className="text-sm px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700">
-              Join Us
+            <button className="text-sm px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700" onClick={toggleForm}>
+              Join
             </button>
           </div>
         </div>
       )}
+{formOpen && (
+  <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+    <div
+      className="
+        bg-white 
+        shadow-xl 
+        rounded-lg 
+        overflow-hidden 
+        w-[100vw] h-[100vh]
+        md:w-[80vw] md:h-[90vh]
+        flex flex-col md:flex-row
+      "
+    >
+      {/* Left Side */}
+      <div
+        className="w-full md:w-[45%] h-1/3 md:h-full bg-cover bg-center"
+        style={{
+          backgroundImage:
+            'url("https://fiverr-res.cloudinary.com/npm-assets/layout-service/standard.0638957.png")',
+        }}
+      >
+        
+        <h1 className="text-white ">Your Journey Starts Here</h1>
+        <div>
+        
+          <h6> <Check />  Get Quality Work — On Time</h6>
+          <h6> <Check />  Connect with Top Talent Worldwide</h6>
+          <h6> <Check /> </h6>
+        </div>
+      </div>
+
+      {/* Right Side */}
+      <div className="relative w-full md:w-[55%] h-2/3 md:h-full bg-red-50 p-8 flex flex-col justify-center items-left p-[40px]">
+        {/* Close Button INSIDE the Form Section */}
+        <button
+          onClick={() => setFormOpen(false)}
+          className="absolute top-4 right-4 text-gray-600 hover:text-black transition"
+        >
+          <X className="w-6 h-6" />
+        </button>
+
+        <h1>Create a new account</h1>
+
+        <h3 className="text-bold ">Email</h3>
+        <input 
+        type="text"
+        placeholder="name@email.com"
+        value={email}
+        className="text-gray-600"
+        onChange = {(e) => setEmail(e.target.value)} />
+
+<h3 className="text-bold ">User Name</h3>
+        <input 
+        type="text"
+        placeholder="name@email.com"
+        value={userName}
+        className="text-gray-600" 
+        onChange={(e) => setEmail(e.target.value)}/>
+
+<h3 className="text-bold ">Password</h3>
+        <input 
+        type="text"
+        placeholder="name@email.com"
+        value={password}
+        className="text-gray-600"
+        onChange={(e) => setPassword(e.target.value)} />
+        
+        <button onClick={(e) => handleSubmit(e)}>
+          Submit
+        </button>
+        {/* Add your form here */}
+      </div>
+    </div>
+  </div>
+)}
+
+
     </nav>
   );
 };
