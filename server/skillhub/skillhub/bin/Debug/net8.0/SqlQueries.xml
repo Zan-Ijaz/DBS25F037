@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+		<RegisterUser>
+			<![CDATA[
+				INSERT INTO user (userName, email, password) VALUES (@userName, @email, @password);
+			]]>
+			</RegisterUser>
+</Queries>

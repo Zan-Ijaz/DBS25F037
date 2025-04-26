@@ -13,9 +13,43 @@ const Navbar = () => {
     setFormOpen(!formOpen);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  }
+  
+    const userData = {
+      userName,
+      email,
+      password,
+    };
+  
+    try {
+      const res = await fetch("http://localhost:5084/api/Users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+  
+      if (!res.ok) {
+        const errorResponse = await res.json();
+        alert(errorResponse.message); // Show error message if any
+        return;
+      }
+  
+      const result = await res.json();
+      alert(result.message); // Display the success message
+      setFormOpen(false); // Close form
+      setUserName("");
+      setEmail("");
+      setPassword("");
+    } catch (err) {
+      console.error(err.message);
+      alert("An error occurred while registering the user.");
+    }
+  };
+  
+  
   return (
     <nav className="w-full py-4 px-6 bg-white sticky top-0 z-50">
       <div className="flex justify-between items-center">
@@ -151,7 +185,7 @@ const Navbar = () => {
         placeholder="name@email.com"
         value={userName}
         className="text-gray-600" 
-        onChange={(e) => setEmail(e.target.value)}/>
+        onChange={(e) => setUserName(e.target.value)}/>
 
 <h3 className="text-bold ">Password</h3>
         <input 

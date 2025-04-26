@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "skillhub.Controllers.UsersController",
+    "Method": "AddUserRegister",
+    "RelativePath": "api/Users/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "skillhub.CommonLayer.Model.UserRegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
