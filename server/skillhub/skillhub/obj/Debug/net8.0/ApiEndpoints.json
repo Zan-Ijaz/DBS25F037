@@ -1,6 +1,27 @@
 [
   {
     "ContainingType": "skillhub.Controllers.UsersController",
+    "Method": "ActionResult",
+    "RelativePath": "api/Users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.UsersController",
     "Method": "AddUserRegister",
     "RelativePath": "api/Users/register",
     "HttpMethod": "POST",
@@ -9,7 +30,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "skillhub.CommonLayer.Model.UserRegisterRequest",
+        "Type": "skillhub.CommonLayer.Model.Users.UserRegisterRequest",
         "IsRequired": true
       }
     ],

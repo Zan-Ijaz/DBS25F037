@@ -175,3 +175,5 @@ C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\
 C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\obj\Debug\net8.0\ref\skillhub.dll
 C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\bin\Debug\net8.0\SqlQueries.xml
+C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

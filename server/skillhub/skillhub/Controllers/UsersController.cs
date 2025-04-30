@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using skillhub.CommonLayer.Model;
-using skillhub.ServiceLayer;
+using skillhub.CommonLayer.Model.Users;
+using skillhub.Interfaces;
 
 namespace skillhub.Controllers
 {
@@ -24,13 +24,40 @@ namespace skillhub.Controllers
             try
             {
                 response = await userInterface.AddUserRegister(request);
+                if (!response.isSuccess)
+                {
+
+                    return BadRequest(new { message = response.message });
+                }
                 // Return a successful response with a message
                 return Ok(new { message = "User registered successfully", data = response });
             }
             catch (Exception ex)
             {
-                // Return a failure response with an error message
-                return BadRequest(new { message = $"Error: {ex.Message}" });
+
+                response.isSuccess = false;
+                response.message = ex.Message;
+                return BadRequest(new { isSuccess = response.isSuccess, message = $"Error: {ex.Message}" });
+
+            }
+            return Ok(new { isSuccess = response.isSuccess, messaage = response.message });
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> ActionResult(string email, string password)
+        {
+            try
+            {
+                string token = await userInterface.AuthenticateUser(email, password);
+                if (string.IsNullOrEmpty(token))
+                {
+                    return Unauthorized(new { message = "Invalid credentials" });
+                }
+                return Ok(new { token });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
             }
         }
     }
