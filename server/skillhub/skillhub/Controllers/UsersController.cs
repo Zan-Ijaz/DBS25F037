@@ -17,7 +17,7 @@ namespace skillhub.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> AddUserRegister(UserRegisterRequest request)
+        public async Task<IActionResult> AddUserRegister(User request)
         {
             UserRegisterResponse response = new UserRegisterResponse();
 
@@ -29,7 +29,7 @@ namespace skillhub.Controllers
 
                     return BadRequest(new { message = response.message });
                 }
-                // Return a successful response with a message
+
                 return Ok(new { message = "User registered successfully", data = response });
             }
             catch (Exception ex)
@@ -54,6 +54,34 @@ namespace skillhub.Controllers
                     return Unauthorized(new { message = "Invalid credentials" });
                 }
                 return Ok(new { token });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("check-email")]
+        public async Task<IActionResult> CheckEmail(checkEmail checkEmail)
+        {
+            try
+            {
+                bool exists = await userInterface.CheckEmailExists(checkEmail.email); 
+                return Ok(new { exists });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("check-username")]
+        public async Task<IActionResult> CheckUserName(checkUserName checkUserName) 
+        {
+            try
+            {
+                bool exists = await userInterface.CheckUserNameExists(checkUserName.userName); 
+                return Ok(new { exists });
             }
             catch (Exception ex)
             {

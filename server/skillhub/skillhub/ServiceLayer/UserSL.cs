@@ -13,7 +13,7 @@ namespace skillhub.ServiceLayer
             this.userInterface = userInterface;
         }
 
-        public async Task<UserRegisterResponse> AddUserRegister(UserRegisterRequest request)
+        public async Task<UserRegisterResponse> AddUserRegister(User request)
         {
             UserRegisterResponse response = new UserRegisterResponse();
            
@@ -29,18 +29,18 @@ namespace skillhub.ServiceLayer
                 response.message = "Invalid email format";
                 return response;
             }
-            if (string.IsNullOrWhiteSpace(request.password))
+            if (string.IsNullOrWhiteSpace(request.passwordHash))
             {
                 response.isSuccess = false;
                 response.message = "Password can't be empty";
             }
-            if(request.password.Length < 8)
+            if(request.passwordHash.Length < 8)
             {
                 response.isSuccess = false;
                 response.message = "Password must be at least 8 characters long";
                 return response;
             }
-            else if (!Regex.IsMatch(request.password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"))
+            else if (!Regex.IsMatch(request.passwordHash, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"))
             {
                 response.isSuccess = false;     
                 response.message = "Password must contain at least one uppercase letter, one lowercase letter, and one number";
@@ -60,6 +60,15 @@ namespace skillhub.ServiceLayer
         public async Task<string> AuthenticateUser(string email, string password)
         {
             return await userInterface.AuthenticateUser(email, password);
+        }
+
+        public Task<bool> CheckEmailExists(string email)
+        {
+            return userInterface.CheckEmailExists(email);
+        }
+        public Task<bool> CheckUserNameExists(string userName)
+        {
+            return userInterface.CheckUserNameExists(userName);
         }
 
     }

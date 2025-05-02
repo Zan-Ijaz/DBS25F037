@@ -8,13 +8,6 @@ namespace skillhub.Common_Utilities
             .AddXmlFile("SqlQueries.xml", optional: true, reloadOnChange: true)
             .Build();
 
-        public static string userExist
-        {
-            get
-            {
-                return configuration["UserExist"];
-            }
-        }
         public static string RegisterUser
         {
             get
@@ -29,6 +22,22 @@ namespace skillhub.Common_Utilities
             get
             {
                 return configuration["AuthenticateUser"];
+            }
+        }
+
+        public static string emailExists
+        {
+            get
+            {
+                return configuration["emailExists"];
+            }
+        }
+
+        public static string userNameExists
+        {
+            get
+            {
+                return configuration["userNameExists"];
             }
         }
     }

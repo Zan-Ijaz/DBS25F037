@@ -176,3 +176,4 @@ C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\
 C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\obj\Release\net8.0\skillhub.pdb
 C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\obj\Release\net8.0\skillhub.genruntimeconfig.cache
 C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\obj\Release\net8.0\ref\skillhub.dll
+C:\Users\HP\OneDrive\Documents\Smemster_2\DataBase\FinalProject\server\skillhub\skillhub\bin\Release\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

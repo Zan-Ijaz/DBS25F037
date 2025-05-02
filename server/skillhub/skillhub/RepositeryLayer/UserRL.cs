@@ -21,7 +21,7 @@ namespace skillhub.RepositeryLayer
             mySqlConnection = new MySqlConnection(configuration["ConnectionStrings:DefaultConnection"]);
         }
 
-        public async Task<UserRegisterResponse> RegisterUser(UserRegisterRequest request)
+        public async Task<UserRegisterResponse> RegisterUser(User request)
         {
             UserRegisterResponse response = new UserRegisterResponse();
 
@@ -34,19 +34,19 @@ namespace skillhub.RepositeryLayer
 
                 string commandText = SqlQueries.RegisterUser;
 
-           
+
                 if (string.IsNullOrWhiteSpace(commandText))
                 {
                     throw new InvalidOperationException("The SQL query for RegisterUser is not defined or is empty.");
                 }
 
-                string userExists = SqlQueries.userExist;
-                using(MySqlCommand sqlCommand = new MySqlCommand(userExists, mySqlConnection))
+                string userExists = SqlQueries.emailExists;
+                using (MySqlCommand sqlCommand = new MySqlCommand(userExists, mySqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
                     sqlCommand.CommandTimeout = 180;
                     sqlCommand.Parameters.AddWithValue("@email", request.email);
-       
+
                     int userCount = Convert.ToInt32(await sqlCommand.ExecuteScalarAsync());
                     if (userCount > 0)
                     {
@@ -63,8 +63,12 @@ namespace skillhub.RepositeryLayer
 
                     sqlCommand.Parameters.AddWithValue("@email", request.email);
 
-                    string hasedPassword = PasswordHasher.HashPassword(request.password);
-                    sqlCommand.Parameters.AddWithValue("@password", hasedPassword);
+                    string hasedPassword = PasswordHasher.HashPassword(request.passwordHash);
+                    sqlCommand.Parameters.AddWithValue("@passwordHash", hasedPassword);
+
+                    sqlCommand.Parameters.AddWithValue("@userName", request.userName);
+                    sqlCommand.Parameters.AddWithValue("@roleID", request.roleID);
+                   
 
                     int status = await sqlCommand.ExecuteNonQueryAsync();
 
@@ -111,33 +115,58 @@ namespace skillhub.RepositeryLayer
 
                     using var reader = await sqlCommand.ExecuteReaderAsync();
 
-                    // Check if a user record exists
+
                     if (await reader.ReadAsync())
                     {
                         var storedHash = reader.GetString("PasswordHash");
-                        var userId = reader.GetInt32("Id");
-                        var role = reader.GetString("Role");
+                        var userID = reader.GetInt32("userID");
+                        var userName = reader.GetString("userName");
+                        var roleID = reader.GetInt32("roleID");
 
-                        // Verify if the provided password matches the stored password hash
-                        if (PasswordHasher.VerifyPassword(password, storedHash))
+                        string role;
+                        if (roleID == 1)
                         {
-                            return JwtHelper.GenerateToken(userId, email, role, configuration);
+                            role = "User";
+                        }
+                        else if (roleID == 2)
+                        {
+                            role = "Freelancer";
+                        }
+                        else if (roleID == 3)
+                        {
+                            role = "Client";
+                        }
+                        else if (roleID == 4)
+                        {
+                            role = "Admin";
                         }
                         else
                         {
-                            return "Invalid credentials";  // Password did not match
+                            role = "Unknown";
+                        }
+                        {
+
+                        }
+
+                        if (PasswordHasher.VerifyPassword(password, storedHash))
+                        {
+                            return JwtHelper.GenerateToken(userID, email, userName, role, configuration);
+                        }
+                        else
+                        {
+                            return "Invalid credentials";
                         }
                     }
                     else
                     {
-                        return "Invalid credentials";  // No user found
+                        return "Invalid credentials";
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return "Error occurred during authentication"; // Return error message
+                return "Error occurred during authentication";
             }
             finally
             {
@@ -146,7 +175,57 @@ namespace skillhub.RepositeryLayer
             }
         }
 
+        public async Task<bool> CheckEmailExists(string email)
+        {
+            try
+            {
+                if (mySqlConnection.State != System.Data.ConnectionState.Open)
+                {
+                    await mySqlConnection.OpenAsync();
+                }
+                string commandText = SqlQueries.emailExists;
+                using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
+                {
+                    sqlCommand.CommandType = System.Data.CommandType.Text;
+                    sqlCommand.CommandTimeout = 180;
+                    sqlCommand.Parameters.AddWithValue("@email", email);
+                    int userCount = Convert.ToInt32(await sqlCommand.ExecuteScalarAsync());
+                    return userCount > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+        }
 
+        public async Task<bool> CheckUserNameExists(string userName)
+        {
+            try
+            {
+                if (mySqlConnection.State != System.Data.ConnectionState.Open)
+                {
+                    await mySqlConnection.OpenAsync();
+                }
+                string commandText = SqlQueries.userNameExists;
+                using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
+                {
+                    sqlCommand.CommandType = System.Data.CommandType.Text;
+                    sqlCommand.CommandTimeout = 180;
+                    sqlCommand.Parameters.AddWithValue("@userName", userName);
+                    int userCount = Convert.ToInt32(await sqlCommand.ExecuteScalarAsync());
+                    return userCount > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+
+        }
     }
 }
 

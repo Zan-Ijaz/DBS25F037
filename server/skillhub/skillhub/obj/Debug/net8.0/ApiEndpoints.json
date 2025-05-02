@@ -1,6 +1,38 @@
 [
   {
     "ContainingType": "skillhub.Controllers.UsersController",
+    "Method": "CheckEmail",
+    "RelativePath": "api/Users/check-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "checkEmail",
+        "Type": "skillhub.CommonLayer.Model.Users.checkEmail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.UsersController",
+    "Method": "CheckUserName",
+    "RelativePath": "api/Users/check-username",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "checkUserName",
+        "Type": "skillhub.CommonLayer.Model.Users.checkUserName",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.UsersController",
     "Method": "ActionResult",
     "RelativePath": "api/Users/login",
     "HttpMethod": "POST",
@@ -30,7 +62,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "skillhub.CommonLayer.Model.Users.UserRegisterRequest",
+        "Type": "skillhub.CommonLayer.Model.Users.User",
         "IsRequired": true
       }
     ],

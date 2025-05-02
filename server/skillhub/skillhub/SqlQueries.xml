@@ -1,18 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Queries>
-	<UserExist>
+	<EmailExists>
 		<![CDATA[
-			SELECT COUNT(*) FROM user WHERE Email = @email; 
+			SELECT COUNT(*) FROM user WHERE email = @email; 
 		]]>
-	</UserExist>
+	</EmailExists>
 		<RegisterUser>
 			<![CDATA[
-				INSERT INTO user (email, passwordHash) VALUES (@email, @password);
+				INSERT INTO user (email, passwordHash, userName, roleID) VALUES (@email, @passwordHash, @userName, @roleID);
 			]]>
 			</RegisterUser>
 	<AuthenticateUser>
 			<![CDATA[
-				SELECT userID, firstName, passwordHash, roleID from user WHERE email = @email;
+				SELECT userID, passwordHash, userName, roleID from user WHERE email = @email;
 			]]>		
 	</AuthenticateUser>
+		<UserNameExists>
+			<![CDATA[
+				SELECT COUNT(*) FROM user WHERE userName = @userName; 
+		]]>
+		</UserNameExists>
 </Queries>

@@ -1,3 +1,19 @@
 clinet/node_modules/
 clinet/build/
 clinet/.env
+
+# Ignore Visual Studio folders
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build output
+bin/
+obj/
+*.vsidx
+*.db
+*.pdb
+*.exe
+*.dll

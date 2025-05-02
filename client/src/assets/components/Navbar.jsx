@@ -11,12 +11,63 @@ const Navbar = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
+  const [username, setUsername] = useState("");
+  const [usernameAvailable, setUsernameAvailable] = useState(null);
+  const [checkingUsername, setCheckingUsername] = useState(false);
+
+  const [emailAvailable, setEmailAvailable] = useState(null);
+  const [checkingEmail, setCheckingEmail] = useState(false);
+
   const toggleForm = () => {
     setFormOpen(!formOpen);
     setError("");
     setMenuOpen(false);
   };
 
+  const checkUsernameAvailability = async (name) => {
+    setCheckingUsername(true);
+    setUsernameAvailable(null);
+    try {
+      const res = await fetch("https://skillhub.runasp.net/api/Users/check-username", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userName: name }),
+      });
+      const data = await res.json();
+      console.log("Username check response:", data); // 👈 Add this
+      setUsernameAvailable(!data.exists); // You might need to change this based on real response
+    } catch (err) {
+      console.error(err);
+      setUsernameAvailable(false);
+    } finally {
+      setCheckingUsername(false);
+    }
+  };
+  
+
+
+
+
+  const checkEmailAvailability = async (email) => {
+    setCheckingEmail(true);
+    setEmailAvailable(null);
+    try {
+      const res = await fetch("https://skillhub.runasp.net/api/Users/check-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      // If exists = true → email is taken → available = false
+      setEmailAvailable(!data.exists);
+    } catch (err) {
+      console.error(err);
+      setEmailAvailable(false);
+    } finally {
+      setCheckingEmail(false);
+    }
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,7 +81,17 @@ const Navbar = () => {
       return;
     }
 
-    const userData = { email, password };
+    if (!isLogin && (username.length <= 6 || !usernameAvailable)) {
+      setError("Username is not valid or unavailable.");
+      return;
+    }
+
+    if (!isLogin && !emailAvailable) {
+      setError("Email is already taken.");
+      return;
+    }
+
+    const userData = { email, password, username };
 
     try {
       const res = await fetch("https://skillhub.runasp.net/api/Users/register", {
@@ -48,6 +109,9 @@ const Navbar = () => {
       alert(data.message || "Registration successful.");
       setEmail("");
       setPassword("");
+      setUsername("");
+      setUsernameAvailable(null);
+      setEmailAvailable(null);
       toggleForm();
     } catch (err) {
       console.error(err);
@@ -110,62 +174,22 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-
-        {/* Mobile menu */}
-        {menuOpen && (
-          <div className="md:hidden mt-4 space-y-4">
-            <ul className="space-y-2 font-medium text-gray-700">
-              <li>Home</li>
-              <li>Find Talent</li>
-              <li>Works</li>
-              <li>About Us</li>
-              <li>Contact Us</li>
-            </ul>
-            <div className="flex flex-col gap-3 mt-4">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="border px-3 py-1 rounded-md"
-              />
-              <button
-                className="text-sm border border-green-600 text-green-600 rounded-full py-2 hover:bg-green-50"
-                onClick={() => {
-                  setIsLogin(true);
-                  toggleForm();
-                }}
-              >
-                Login
-              </button>
-              <button
-                className="text-sm bg-green-600 text-white rounded-full py-2 hover:bg-green-700"
-                onClick={() => {
-                  setIsLogin(false);
-                  toggleForm();
-                }}
-              >
-                Join
-              </button>
-            </div>
-          </div>
-        )}
       </nav>
 
       {/* Overlay Form */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ${
-          formOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ${formOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
       >
         <div className="relative bg-white rounded-xl shadow-lg overflow-hidden w-[95vw] max-w-4xl h-[85vh] transition-all duration-500 flex">
-
           {/* Sliding Image */}
           <div
             className={`absolute top-0 left-0 h-full w-1/2 bg-cover bg-center transition-all duration-700 ease-in-out z-10 ${
               isLogin ? "translate-x-0" : "translate-x-full"
             }`}
             style={{
-              backgroundImage:
-                'url("https://fiverr-res.cloudinary.com/npm-assets/layout-service/standard.0638957.png")',
+              backgroundImage: isLogin
+                ? 'url("https://fiverr-res.cloudinary.com/npm-assets/layout-service/standard.0638957.png")'
+                : 'url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d")',
             }}
           >
             <div className="p-6 md:p-10">
@@ -181,11 +205,9 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Sliding Form */}
+          {/* Form Section */}
           <div
-            className={`absolute top-0 right-0 h-full w-1/2 bg-white p-8 overflow-y-auto transform transition-all duration-700 ease-in-out z-20 ${
-              isLogin ? "translate-x-0" : "-translate-x-full"
-            }`}
+            className={`absolute top-0 right-0 h-full w-1/2 bg-white p-8 overflow-y-auto transform transition-all duration-700 ease-in-out z-20 ${isLogin ? "translate-x-0" : "-translate-x-full"}`}
           >
             <button
               onClick={toggleForm}
@@ -194,12 +216,43 @@ const Navbar = () => {
               ✕
             </button>
 
-            <h2 className="text-xl font-bold mb-4 mt-2">
-              {isLogin ? "Login to your account" : "Create a new account"}
-            </h2>
+            <h2 className="text-xl font-bold mb-4 mt-2">{isLogin ? "Login to your account" : "Create a new account"}</h2>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
               {error && <p className="text-red-500 text-sm">{error}</p>}
+
+              {!isLogin && (
+                <div>
+                  <label className="block text-sm font-semibold mb-1">Username</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-2 border rounded-md outline-none"
+                    value={username}
+                    onChange={(e) => {
+                      const name = e.target.value;
+                      setUsername(name);
+                      if (name.length > 6) {
+                        checkUsernameAvailability(name);
+                      } else {
+                        setUsernameAvailable(null);
+                      }
+                    }}
+                    placeholder="Choose a username"
+                  />
+                  {username.length > 0 && username.length <= 6 && (
+                    <p className="text-red-500 text-xs mt-1">Must be more than 6 characters</p>
+                  )}
+                  {checkingUsername && username.length > 6 && (
+                    <p className="text-gray-500 text-xs mt-1">Checking availability...</p>
+                  )}
+                  {usernameAvailable === false && (
+                    <p className="text-red-500 text-xs mt-1">Username is already taken</p>
+                  )}
+                  {usernameAvailable === true && (
+                    <p className="text-green-600 text-xs mt-1">Username is available</p>
+                  )}
+                </div>
+              )}
 
               <div>
                 <label className="block text-sm font-semibold mb-1">Email</label>
@@ -207,9 +260,23 @@ const Navbar = () => {
                   type="email"
                   className="w-full px-4 py-2 border rounded-md outline-none"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (e.target.value.length > 0) {
+                      checkEmailAvailability(e.target.value);
+                    }
+                  }}
                   placeholder="name@example.com"
                 />
+                {checkingEmail && email.length > 0 && (
+                  <p className="text-gray-500 text-xs mt-1">Checking email availability...</p>
+                )}
+                {emailAvailable === false && (
+                  <p className="text-red-500 text-xs mt-1">Email is already taken</p>
+                )}
+                {emailAvailable === true && (
+                  <p className="text-green-600 text-xs mt-1">Email is available</p>
+                )}
               </div>
 
               <div className="relative">
@@ -254,17 +321,22 @@ const Navbar = () => {
               <button
                 type="submit"
                 className={`mt-4 py-2 rounded-md transition ${
-                  email && password.length >= 8
+                  email &&
+                  password.length >= 8 &&
+                  (isLogin || (username.length > 6 && usernameAvailable))
                     ? "bg-green-600 text-white hover:bg-green-700"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
-                disabled={!(email && password.length >= 8)}
+                disabled={
+                  !email ||
+                  password.length < 8 ||
+                  (!isLogin && (username.length <= 6 || !usernameAvailable))
+                }
               >
-                {isLogin ? "Login" : "Register"}
+                {isLogin ? "Login" : "Create Account"}
               </button>
             </form>
 
-            {/* Text-based toggle */}
             <div className="mt-4 text-sm text-center">
               {isLogin ? (
                 <p>
@@ -273,7 +345,7 @@ const Navbar = () => {
                     className="text-green-600 cursor-pointer font-medium"
                     onClick={() => setIsLogin(false)}
                   >
-                    Sign up
+                    Continue
                   </span>
                 </p>
               ) : (
