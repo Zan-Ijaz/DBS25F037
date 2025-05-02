@@ -33,7 +33,7 @@ const Navbar = () => {
     const userData = { email, password };
 
     try {
-      const res = await fetch("http://skillhub.runasp.net/api/Users/register", {
+      const res = await fetch("https://skillhub.runasp.net/api/Users/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
