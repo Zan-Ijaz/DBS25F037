@@ -29,18 +29,18 @@ namespace skillhub.ServiceLayer
                 response.message = "Invalid email format";
                 return response;
             }
-            if (string.IsNullOrWhiteSpace(request.passwordHash))
+            if (string.IsNullOrWhiteSpace(request.password))
             {
                 response.isSuccess = false;
                 response.message = "Password can't be empty";
             }
-            if(request.passwordHash.Length < 8)
+            if(request.password.Length < 8)
             {
                 response.isSuccess = false;
                 response.message = "Password must be at least 8 characters long";
                 return response;
             }
-            else if (!Regex.IsMatch(request.passwordHash, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"))
+            else if (!Regex.IsMatch(request.password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"))
             {
                 response.isSuccess = false;     
                 response.message = "Password must contain at least one uppercase letter, one lowercase letter, and one number";
@@ -57,9 +57,9 @@ namespace skillhub.ServiceLayer
             }
             return response;
         }
-        public async Task<string> AuthenticateUser(string email, string password)
+        public async Task<string> AuthenticateUser(UserLogin userLogin)
         {
-            return await userInterface.AuthenticateUser(email, password);
+            return await userInterface.AuthenticateUser(userLogin);
         }
 
         public Task<bool> CheckEmailExists(string email)

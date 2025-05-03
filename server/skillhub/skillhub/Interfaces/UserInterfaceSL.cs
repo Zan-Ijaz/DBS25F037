@@ -5,7 +5,7 @@ namespace skillhub.Interfaces
     public interface UserInterfaceSL
     {
         public Task<UserRegisterResponse> AddUserRegister(User request);
-        public Task<string> AuthenticateUser(string email, string password);
+        public Task<string> AuthenticateUser(UserLogin userLogin);
 
         public Task<bool> CheckEmailExists(string email);
 

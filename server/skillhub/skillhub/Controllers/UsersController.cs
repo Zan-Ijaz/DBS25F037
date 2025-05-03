@@ -44,11 +44,11 @@ namespace skillhub.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> ActionResult(string email, string password)
+        public async Task<IActionResult> ActionResult(UserLogin userLogin)
         {
             try
             {
-                string token = await userInterface.AuthenticateUser(email, password);
+                string token = await userInterface.AuthenticateUser(userLogin);
                 if (string.IsNullOrEmpty(token))
                 {
                     return Unauthorized(new { message = "Invalid credentials" });

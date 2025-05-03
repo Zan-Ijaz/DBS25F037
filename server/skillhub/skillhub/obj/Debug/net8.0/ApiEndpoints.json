@@ -40,14 +40,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "password",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "userLogin",
+        "Type": "skillhub.CommonLayer.Model.Users.UserLogin",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

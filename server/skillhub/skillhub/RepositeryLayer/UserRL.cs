@@ -40,21 +40,6 @@ namespace skillhub.RepositeryLayer
                     throw new InvalidOperationException("The SQL query for RegisterUser is not defined or is empty.");
                 }
 
-                string userExists = SqlQueries.emailExists;
-                using (MySqlCommand sqlCommand = new MySqlCommand(userExists, mySqlConnection))
-                {
-                    sqlCommand.CommandType = System.Data.CommandType.Text;
-                    sqlCommand.CommandTimeout = 180;
-                    sqlCommand.Parameters.AddWithValue("@email", request.email);
-
-                    int userCount = Convert.ToInt32(await sqlCommand.ExecuteScalarAsync());
-                    if (userCount > 0)
-                    {
-                        response.isSuccess = false;
-                        response.message = "User already exists.";
-                        return response;
-                    }
-                }
 
                 using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
                 {
@@ -63,20 +48,25 @@ namespace skillhub.RepositeryLayer
 
                     sqlCommand.Parameters.AddWithValue("@email", request.email);
 
-                    string hasedPassword = PasswordHasher.HashPassword(request.passwordHash);
-                    sqlCommand.Parameters.AddWithValue("@passwordHash", hasedPassword);
+                    string passwordHash = PasswordHasher.HashPassword(request.password);
+
+                    sqlCommand.Parameters.AddWithValue("@passwordHash", passwordHash);
 
                     sqlCommand.Parameters.AddWithValue("@userName", request.userName);
-                    sqlCommand.Parameters.AddWithValue("@roleID", request.roleID);
+                   
                    
 
                     int status = await sqlCommand.ExecuteNonQueryAsync();
 
-                    if (status <= 0)
+                    if (status > 0)
+                    {
+                        response.isSuccess = true;
+                        response.message = "Registration successful";
+                    }
+                    else
                     {
                         response.isSuccess = false;
-                        response.message = "Failed to register user.";
-                        return response;
+                        response.message = "Failed to register user";
                     }
                 }
             }
@@ -95,7 +85,7 @@ namespace skillhub.RepositeryLayer
             return response;
         }
 
-        public async Task<string> AuthenticateUser(string email, string password)
+        public async Task<string> AuthenticateUser(UserLogin userLogin)
         {
             try
             {
@@ -110,8 +100,8 @@ namespace skillhub.RepositeryLayer
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
                     sqlCommand.CommandTimeout = 180;
-                    sqlCommand.Parameters.AddWithValue("@email", email);
-                    sqlCommand.Parameters.AddWithValue("@password", password);
+                    sqlCommand.Parameters.AddWithValue("@email", userLogin.email);
+                    sqlCommand.Parameters.AddWithValue("@password", userLogin.password);
 
                     using var reader = await sqlCommand.ExecuteReaderAsync();
 
@@ -148,9 +138,9 @@ namespace skillhub.RepositeryLayer
 
                         }
 
-                        if (PasswordHasher.VerifyPassword(password, storedHash))
+                        if (PasswordHasher.VerifyPassword(userLogin.password, storedHash))
                         {
-                            return JwtHelper.GenerateToken(userID, email, userName, role, configuration);
+                            return JwtHelper.GenerateToken(userID, userLogin.email, userName, role, configuration);
                         }
                         else
                         {
