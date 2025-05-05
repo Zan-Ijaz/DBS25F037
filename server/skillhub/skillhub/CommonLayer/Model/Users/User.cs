@@ -6,14 +6,11 @@ namespace skillhub.CommonLayer.Model.Users
     {
         [Key]
         public int userID { get; set; }
-       
         public string email { get; set; }
-
-        public string password { get; set; }
+        public string passwordHash { get; set; }
         public string userName { get; set; }
+        public int roleID { get; set; }
 
-
-        public int roleID { get; set; } = 1;
        
     }
 

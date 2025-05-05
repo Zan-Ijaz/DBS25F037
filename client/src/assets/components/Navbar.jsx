@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import { Eye, EyeOff, Menu, Search, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Eye, EyeOff, Menu, Search, X, Bell, User } from "lucide-react";
 import { CiCircleCheck } from "react-icons/ci";
+import { useCookies } from "react-cookie";
+import { useNavigate, Link } from "react-router-dom";
+import {jwtDecode} from "jwt-decode";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -15,6 +18,215 @@ const Navbar = () => {
   const [checkingUsername, setCheckingUsername] = useState(false);
   const [emailAvailable, setEmailAvailable] = useState(null);
   const [checkingEmail, setCheckingEmail] = useState(false);
+  const [cookies, setCookie, removeCookie] = useCookies(["auth-token"]);
+  const [userRole, setUserRole] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = cookies["auth-token"];
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        setUserData({
+          id: decoded.nameid,
+          email: decoded.email,
+          username: decoded.unique_name,
+          role: decoded.role
+        });
+        setUserRole(decoded.role);
+      } catch (error) {
+        console.error("Token decoding failed:", error);
+      }
+    }
+  }, [cookies]);
+
+  const DefaultNav = () => (
+    <>
+      <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
+        <li className="hover:text-green-600 cursor-pointer"><Link to="/">Home</Link></li>
+        <li className="hover:text-green-600 cursor-pointer"><Link to="/find-talent">Find Talent</Link></li>
+        <li className="hover:text-green-600 cursor-pointer"><Link to="/works">Works</Link></li>
+        <li className="hover:text-green-600 cursor-pointer"><Link to="/about">About Us</Link></li>
+        <li className="hover:text-green-600 cursor-pointer"><Link to="/contact">Contact Us</Link></li>
+      </ul>
+
+      <div className="hidden md:flex items-center flex-1 max-w-[270px] mx-4">
+        <div className="w-full h-[40px] border border-gray-300 rounded-md overflow-hidden flex">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="w-full h-full text-sm px-3 outline-none"
+          />
+          <div className="h-[60%] w-px bg-gray-300 my-auto" />
+          <button className="h-full px-3 py-1 flex items-center justify-center">
+            <Search className="text-gray-500 h-4 w-4" />
+          </button>
+        </div>
+      </div>
+
+      <div className="hidden md:flex space-x-4">
+        {userRole === 1 ? (
+          <button 
+            onClick={handleLogout}
+            className="text-sm px-4 py-1 border border-red-600 text-red-600 rounded-full hover:bg-red-50"
+          >
+            Logout
+          </button>
+        ) : (
+          <>
+            <button
+              className="text-sm px-4 py-1 border border-green-600 text-green-600 rounded-full hover:bg-green-50"
+              onClick={() => {
+                setIsLogin(true);
+                setFormOpen(true);
+              }}
+            >
+              Login
+            </button>
+            <button
+              className="text-sm px-4 py-1 bg-green-600 text-white rounded-full hover:bg-green-700"
+              onClick={() => {
+                setIsLogin(false);
+                setFormOpen(true);
+              }}
+            >
+              Join
+            </button>
+          </>
+        )}
+      </div>
+    </>
+  );
+
+  const FreelancerNav = () => (
+    <>
+      <div className="hidden md:flex items-center space-x-6">
+        <Link to="/dashboard" className="hover:text-green-600">Dashboard</Link>
+        <Link to="/orders" className="hover:text-green-600">Orders</Link>
+        <Link to="/gigs" className="hover:text-green-600">Gigs</Link>
+        <Link to="/profile" className="hover:text-green-600">Profile</Link>
+      </div>
+      <div className="hidden md:flex items-center space-x-4 ml-auto">
+        <button className="p-2 hover:bg-gray-100 rounded-full">
+          <Bell className="w-5 h-5" />
+        </button>
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+            <User className="w-4 h-4" />
+          </div>
+          <span className="text-sm">{userData?.username}</span>
+        </div>
+        <button 
+          onClick={handleLogout}
+          className="text-sm px-4 py-1 border border-red-600 text-red-600 rounded-full hover:bg-red-50"
+        >
+          Logout
+        </button>
+      </div>
+    </>
+  );
+
+  const ClientNav = () => (
+    <>
+      <div className="hidden md:flex items-center flex-1 max-w-2xl mx-4">
+        <div className="w-full h-[40px] border border-gray-300 rounded-md overflow-hidden flex">
+          <input
+            type="text"
+            placeholder="Search services..."
+            className="w-full h-full text-sm px-3 outline-none"
+          />
+          <button className="h-full px-4 bg-green-600 text-white hover:bg-green-700">
+            <Search className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+      <div className="hidden md:flex items-center space-x-6">
+        <Link to="/dashboard" className="hover:text-green-600">Dashboard</Link>
+        <Link to="/orders" className="hover:text-green-600">Orders</Link>
+        <Link to="/profile" className="hover:text-green-600">Profile</Link>
+        <button 
+          onClick={handleLogout}
+          className="text-sm px-4 py-1 border border-red-600 text-red-600 rounded-full hover:bg-red-50"
+        >
+          Logout
+        </button>
+      </div>
+    </>
+  );
+
+  const MobileMenu = () => (
+    <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-4">
+      {userRole === 1 ? (
+        <>
+          <Link to="/" className="block py-2 hover:text-green-600">Home</Link>
+          <Link to="/find-talent" className="block py-2 hover:text-green-600">Find Talent</Link>
+          <Link to="/works" className="block py-2 hover:text-green-600">Works</Link>
+          <Link to="/about" className="block py-2 hover:text-green-600">About Us</Link>
+          <Link to="/contact" className="block py-2 hover:text-green-600">Contact Us</Link>
+          <button 
+            onClick={handleLogout}
+            className="w-full mt-4 py-2 text-red-600 border border-red-600 rounded-full"
+          >
+            Logout
+          </button>
+        </>
+      ) : userRole === 2 ? (
+        <>
+          <Link to="/dashboard" className="block py-2 hover:text-green-600">Dashboard</Link>
+          <Link to="/orders" className="block py-2 hover:text-green-600">Orders</Link>
+          <Link to="/gigs" className="block py-2 hover:text-green-600">Gigs</Link>
+          <Link to="/profile" className="block py-2 hover:text-green-600">Profile</Link>
+          <button 
+            onClick={handleLogout}
+            className="w-full mt-4 py-2 text-red-600 border border-red-600 rounded-full"
+          >
+            Logout
+          </button>
+        </>
+      ) : userRole === 3 ? (
+        <>
+          <Link to="/dashboard" className="block py-2 hover:text-green-600">Dashboard</Link>
+          <Link to="/orders" className="block py-2 hover:text-green-600">Orders</Link>
+          <Link to="/profile" className="block py-2 hover:text-green-600">Profile</Link>
+          <button 
+            onClick={handleLogout}
+            className="w-full mt-4 py-2 text-red-600 border border-red-600 rounded-full"
+          >
+            Logout
+          </button>
+        </>
+      ) : (
+        <div className="flex space-x-4">
+          <button
+            className="text-sm px-4 py-1 border border-green-600 text-green-600 rounded-full hover:bg-green-50 flex-1"
+            onClick={() => {
+              setIsLogin(true);
+              setFormOpen(true);
+            }}
+          >
+            Login
+          </button>
+          <button
+            className="text-sm px-4 py-1 bg-green-600 text-white rounded-full hover:bg-green-700 flex-1"
+            onClick={() => {
+              setIsLogin(false);
+              setFormOpen(true);
+            }}
+          >
+            Join
+          </button>
+        </div>
+      )}
+    </div>
+  );
+
+  const handleLogout = () => {
+    removeCookie("auth-token", { path: "/" });
+    navigate("/");
+    setUserRole(null);
+    setUserData(null);
+  };
 
   const toggleForm = () => {
     setFormOpen(!formOpen);
@@ -63,7 +275,6 @@ const Navbar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Only validate for registration
     if (!isLogin) {
       if (!email || !password || !username) {
         setError("All fields are required");
@@ -106,7 +317,15 @@ const Navbar = () => {
       const data = await res.json();
       alert(data.message || (isLogin ? "Login successful!" : "Registration successful!"));
       
-      // Reset form
+      setCookie("auth-token", data.token, {
+        path: "/",
+        maxAge: 86400,
+        secure: true,
+        sameSite: "lax",
+      });
+
+      navigate("/dashboard");
+
       setEmail("");
       setPassword("");
       setUsername("");
@@ -125,115 +344,36 @@ const Navbar = () => {
       <nav className="w-full py-4 px-4 sm:px-6 bg-white sticky top-0 z-50 shadow">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <span className="text-xl font-bold">SkillHub</span>
+            <Link to="/" className="text-xl font-bold">SkillHub</Link>
           </div>
 
-          <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
-            <li className="hover:text-green-600 cursor-pointer">Home</li>
-            <li className="hover:text-green-600 cursor-pointer">Find Talent</li>
-            <li className="hover:text-green-600 cursor-pointer">Works</li>
-            <li className="hover:text-green-600 cursor-pointer">About Us</li>
-            <li className="hover:text-green-600 cursor-pointer">Contact Us</li>
-          </ul>
-
-          <div className="hidden md:flex items-center flex-1 max-w-[270px] mx-4">
-            <div className="w-full h-[40px] border border-gray-300 rounded-md overflow-hidden flex">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full h-full text-sm px-3 outline-none"
-              />
-              <div className="h-[60%] w-px bg-gray-300 my-auto" />
-              <button className="h-full px-3 py-1 flex items-center justify-center">
-                <Search className="text-gray-500 h-4 w-4" />
-              </button>
-            </div>
-          </div>
-
-          <div className="hidden md:flex space-x-4">
-            <button
-              className="text-sm px-4 py-1 border border-green-600 text-green-600 rounded-full hover:bg-green-50"
-              onClick={() => {
-                setIsLogin(true);
-                setFormOpen(true);
-              }}
-            >
-              Login
-            </button>
-            <button
-              className="text-sm px-4 py-1 bg-green-600 text-white rounded-full hover:bg-green-700"
-              onClick={() => {
-                setIsLogin(false);
-                setFormOpen(true);
-              }}
-            >
-              Join
-            </button>
-          </div>
+          {userRole === 1 && <DefaultNav />}
+          {userRole === 2 && <FreelancerNav />}
+          {userRole === 3 && <ClientNav />}
+          {!userRole && <DefaultNav />}
 
           <div className="md:hidden flex items-center space-x-4">
+            {userRole && userRole !== 1 && (
+              <button className="p-2 hover:bg-gray-100 rounded-full">
+                <Bell className="w-5 h-5" />
+              </button>
+            )}
             <button onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-        {menuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-4">
-            <ul className="space-y-4 font-medium text-gray-700">
-              <li className="hover:text-green-600 cursor-pointer">Home</li>
-              <li className="hover:text-green-600 cursor-pointer">Find Talent</li>
-              <li className="hover:text-green-600 cursor-pointer">Works</li>
-              <li className="hover:text-green-600 cursor-pointer">About Us</li>
-              <li className="hover:text-green-600 cursor-pointer">Contact Us</li>
-            </ul>
-
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              <div className="w-full h-[40px] border border-gray-300 rounded-md overflow-hidden flex mb-4">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="w-full h-full text-sm px-3 outline-none"
-                />
-                <div className="h-[60%] w-px bg-gray-300 my-auto" />
-                <button className="h-full px-3 py-1 flex items-center justify-center">
-                  <Search className="text-gray-500 h-4 w-4" />
-                </button>
-              </div>
-
-              <div className="flex space-x-4">
-                <button
-                  className="text-sm px-4 py-1 border border-green-600 text-green-600 rounded-full hover:bg-green-50 flex-1"
-                  onClick={() => {
-                    setIsLogin(true);
-                    setFormOpen(true);
-                  }}
-                >
-                  Login
-                </button>
-                <button
-                  className="text-sm px-4 py-1 bg-green-600 text-white rounded-full hover:bg-green-700 flex-1"
-                  onClick={() => {
-                    setIsLogin(false);
-                    setFormOpen(true);
-                  }}
-                >
-                  Join
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        {menuOpen && <MobileMenu />}
       </nav>
 
       {/* Form Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100] transition-opacity duration-300 ${
           formOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
         <div className="relative bg-white rounded-xl shadow-lg overflow-hidden w-[95%] max-w-4xl h-[90vh] md:h-[75vh] transition-all duration-500 flex flex-col md:flex-row">
-          {/* Mobile Close Button */}
           <button
             onClick={toggleForm}
             className="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl md:hidden z-30"
@@ -241,7 +381,6 @@ const Navbar = () => {
             ✕
           </button>
 
-          {/* Desktop Image Panel */}
           <div
             className={`hidden md:block w-full md:w-1/2 h-1/3 md:h-full bg-cover bg-center transition-all duration-700 ease-in-out ${
               isLogin ? "translate-x-0" : "translate-x-full"
@@ -263,13 +402,11 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Form Section */}
           <div
             className={`w-full md:w-1/2 h-full p-6 md:p-8 overflow-y-auto transition-all duration-700 ease-in-out ${
               isLogin ? "md:translate-x-0" : "md:-translate-x-full"
             }`}
           >
-            {/* Desktop Close Button */}
             <button
               onClick={toggleForm}
               className="hidden md:block absolute top-4 right-4 text-gray-500 hover:text-black text-2xl"

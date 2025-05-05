@@ -6,24 +6,27 @@ using MySqlConnector;
 using skillhub.Common_Utilities;
 using skillhub.Common_Utility;
 using skillhub.CommonLayer.Model.Users;
+using skillhub.Helpers;
 using skillhub.Interfaces;
 
 namespace skillhub.RepositeryLayer
 {
     public class UserRL : UserInterfaceRL
     {
-        public readonly IConfiguration configuration;
-        public readonly MySqlConnection mySqlConnection;
+        private readonly IConfiguration configuration;
+        private readonly IDbConnectionFactory dbConnectionFactory;
 
-        public UserRL(IConfiguration configuration)
+        public UserRL(IConfiguration configuration, IDbConnectionFactory dbConnectionFactory)
         {
             this.configuration = configuration;
-            mySqlConnection = new MySqlConnection(configuration["ConnectionStrings:DefaultConnection"]);
+            this.dbConnectionFactory = dbConnectionFactory;
         }
 
         public async Task<UserRegisterResponse> RegisterUser(User request)
         {
             UserRegisterResponse response = new UserRegisterResponse();
+
+            await using var mySqlConnection = dbConnectionFactory.CreateConnection();
 
             try
             {
@@ -34,12 +37,10 @@ namespace skillhub.RepositeryLayer
 
                 string commandText = SqlQueries.RegisterUser;
 
-
                 if (string.IsNullOrWhiteSpace(commandText))
                 {
                     throw new InvalidOperationException("The SQL query for RegisterUser is not defined or is empty.");
                 }
-
 
                 using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
                 {
@@ -47,27 +48,15 @@ namespace skillhub.RepositeryLayer
                     sqlCommand.CommandTimeout = 180;
 
                     sqlCommand.Parameters.AddWithValue("@email", request.email);
-
-                    string passwordHash = PasswordHasher.HashPassword(request.password);
-
+                    string passwordHash = PasswordHasher.HashPassword(request.passwordHash);
                     sqlCommand.Parameters.AddWithValue("@passwordHash", passwordHash);
-
                     sqlCommand.Parameters.AddWithValue("@userName", request.userName);
-                   
-                   
+                    sqlCommand.Parameters.AddWithValue("@roleID", request.roleID);
 
                     int status = await sqlCommand.ExecuteNonQueryAsync();
 
-                    if (status > 0)
-                    {
-                        response.isSuccess = true;
-                        response.message = "Registration successful";
-                    }
-                    else
-                    {
-                        response.isSuccess = false;
-                        response.message = "Failed to register user";
-                    }
+                    response.isSuccess = status > 0;
+                    response.message = status > 0 ? "Registration successful" : "Failed to register user";
                 }
             }
             catch (Exception ex)
@@ -76,17 +65,14 @@ namespace skillhub.RepositeryLayer
                 response.message = ex.Message;
                 Console.WriteLine(ex);
             }
-            finally
-            {
-                await mySqlConnection.CloseAsync();
-                await mySqlConnection.DisposeAsync();
-            }
 
             return response;
         }
 
         public async Task<string> AuthenticateUser(UserLogin userLogin)
         {
+            await using var mySqlConnection = dbConnectionFactory.CreateConnection();
+
             try
             {
                 if (mySqlConnection.State != System.Data.ConnectionState.Open)
@@ -105,7 +91,6 @@ namespace skillhub.RepositeryLayer
 
                     using var reader = await sqlCommand.ExecuteReaderAsync();
 
-
                     if (await reader.ReadAsync())
                     {
                         var storedHash = reader.GetString("PasswordHash");
@@ -113,30 +98,12 @@ namespace skillhub.RepositeryLayer
                         var userName = reader.GetString("userName");
                         var roleID = reader.GetInt32("roleID");
 
-                        string role;
-                        if (roleID == 1)
+                        string role = roleID switch
                         {
-                            role = "User";
-                        }
-                        else if (roleID == 2)
-                        {
-                            role = "Freelancer";
-                        }
-                        else if (roleID == 3)
-                        {
-                            role = "Client";
-                        }
-                        else if (roleID == 4)
-                        {
-                            role = "Admin";
-                        }
-                        else
-                        {
-                            role = "Unknown";
-                        }
-                        {
-
-                        }
+                            1 => "User",
+                            2 => "Admin",
+                            _ => "Unknown"
+                        };
 
                         if (PasswordHasher.VerifyPassword(userLogin.password, storedHash))
                         {
@@ -158,22 +125,21 @@ namespace skillhub.RepositeryLayer
                 Console.WriteLine(ex);
                 return "Error occurred during authentication";
             }
-            finally
-            {
-                await mySqlConnection.CloseAsync();
-                await mySqlConnection.DisposeAsync();
-            }
         }
 
         public async Task<bool> CheckEmailExists(string email)
         {
+            await using var mySqlConnection = dbConnectionFactory.CreateConnection();
+
             try
             {
                 if (mySqlConnection.State != System.Data.ConnectionState.Open)
                 {
                     await mySqlConnection.OpenAsync();
                 }
+
                 string commandText = SqlQueries.emailExists;
+
                 using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
@@ -192,13 +158,17 @@ namespace skillhub.RepositeryLayer
 
         public async Task<bool> CheckUserNameExists(string userName)
         {
+            await using var mySqlConnection = dbConnectionFactory.CreateConnection();
+
             try
             {
                 if (mySqlConnection.State != System.Data.ConnectionState.Open)
                 {
                     await mySqlConnection.OpenAsync();
                 }
+
                 string commandText = SqlQueries.userNameExists;
+
                 using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
@@ -213,9 +183,8 @@ namespace skillhub.RepositeryLayer
                 Console.WriteLine(ex);
                 return false;
             }
-
-
         }
     }
+
 }
 

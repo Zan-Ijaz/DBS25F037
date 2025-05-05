@@ -7,7 +7,7 @@
 	</EmailExists>
 		<RegisterUser>
 			<![CDATA[
-				INSERT INTO user (email, passwordHash, userName, roleID) VALUES (@email, @passwordHash, @userName, 1);
+				INSERT INTO `user` (firstName, lastName, email, passwordHash, profilePicture, isActive, roleID, joinDate, bio, phone, country, username) VALUES ('', '', @email, @passwordHash, NULL, 1, @roleID, NOW(), '', '03001234567', 13, @userName);
 			]]>
 			</RegisterUser>
 	<AuthenticateUser>

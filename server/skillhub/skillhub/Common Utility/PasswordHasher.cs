@@ -4,7 +4,7 @@ namespace skillhub.Common_Utility
 {
     public class PasswordHasher
     {
-        private static readonly char Key = 'K';  // Simple XOR Key (for testing only)
+        private static readonly char Key = 'K';  
 
         // Encode (XOR Encryption)
         public static string Encode(string plainText)
@@ -37,13 +37,12 @@ namespace skillhub.Common_Utility
             // Decode the stored encoded password
             string decodedPassword = Decode(storedEncodedPassword);
 
-            // Compare the entered password with the decoded password
             return enteredPassword == decodedPassword;
         }
 
         public static string HashPassword(string plainPassword)
         {
-            // Use the Encode method to hash the password
+            
             return Encode(plainPassword);
         }
     }

@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using skillhub.Interfaces;
 using skillhub.RepositeryLayer;
 using skillhub.ServiceLayer;
+using skillhub.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,7 @@ builder.Services.AddScoped<UserInterfaceRL, UserRL>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
 builder.Services.AddAuthentication(options =>
