@@ -5,26 +5,26 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Users/register": {
+    "/api/auth/register": {
       "post": {
         "tags": [
-          "Users"
+          "auth"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/RegisterRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/RegisterRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/RegisterRequest"
               }
             }
           }
@@ -36,10 +36,10 @@
         }
       }
     },
-    "/api/Users/login": {
+    "/api/auth/login": {
       "post": {
         "tags": [
-          "Users"
+          "auth"
         ],
         "requestBody": {
           "content": {
@@ -67,10 +67,10 @@
         }
       }
     },
-    "/api/Users/check-email": {
+    "/api/auth/check-email": {
       "post": {
         "tags": [
-          "Users"
+          "auth"
         ],
         "requestBody": {
           "content": {
@@ -98,10 +98,10 @@
         }
       }
     },
-    "/api/Users/check-username": {
+    "/api/auth/check-username": {
       "post": {
         "tags": [
-          "Users"
+          "auth"
         ],
         "requestBody": {
           "content": {
@@ -122,6 +122,18 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Vehicles/start-engines": {
+      "get": {
+        "tags": [
+          "Vehicles"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -132,22 +144,18 @@
   },
   "components": {
     "schemas": {
-      "User": {
+      "RegisterRequest": {
         "type": "object",
         "properties": {
-          "userID": {
-            "type": "integer",
-            "format": "int32"
+          "userName": {
+            "type": "string",
+            "nullable": true
           },
           "email": {
             "type": "string",
             "nullable": true
           },
           "passwordHash": {
-            "type": "string",
-            "nullable": true
-          },
-          "userName": {
             "type": "string",
             "nullable": true
           },

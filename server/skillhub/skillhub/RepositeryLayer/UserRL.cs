@@ -22,9 +22,10 @@ namespace skillhub.RepositeryLayer
             this.dbConnectionFactory = dbConnectionFactory;
         }
 
-        public async Task<UserRegisterResponse> RegisterUser(User request)
+        public async Task<UserRegisterResponse> RegisterUser(User user)
         {
             UserRegisterResponse response = new UserRegisterResponse();
+
 
             await using var mySqlConnection = dbConnectionFactory.CreateConnection();
 
@@ -47,11 +48,11 @@ namespace skillhub.RepositeryLayer
                     sqlCommand.CommandType = System.Data.CommandType.Text;
                     sqlCommand.CommandTimeout = 180;
 
-                    sqlCommand.Parameters.AddWithValue("@email", request.email);
-                    string passwordHash = PasswordHasher.HashPassword(request.passwordHash);
+                    sqlCommand.Parameters.AddWithValue("@email", user.email);
+                    string passwordHash = PasswordHasher.HashPassword(user.passwordHash);
                     sqlCommand.Parameters.AddWithValue("@passwordHash", passwordHash);
-                    sqlCommand.Parameters.AddWithValue("@userName", request.userName);
-                    sqlCommand.Parameters.AddWithValue("@roleID", request.roleID);
+                    sqlCommand.Parameters.AddWithValue("@userName", user.userName);
+                    sqlCommand.Parameters.AddWithValue("@roleID", user.roleID);
 
                     int status = await sqlCommand.ExecuteNonQueryAsync();
 
@@ -69,7 +70,7 @@ namespace skillhub.RepositeryLayer
             return response;
         }
 
-        public async Task<string> AuthenticateUser(UserLogin userLogin)
+        public async Task<string> AuthenticateUser(User authUser)
         {
             await using var mySqlConnection = dbConnectionFactory.CreateConnection();
 
@@ -86,8 +87,8 @@ namespace skillhub.RepositeryLayer
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
                     sqlCommand.CommandTimeout = 180;
-                    sqlCommand.Parameters.AddWithValue("@email", userLogin.email);
-                    sqlCommand.Parameters.AddWithValue("@password", userLogin.password);
+                    sqlCommand.Parameters.AddWithValue("@email", authUser.email);
+                    sqlCommand.Parameters.AddWithValue("@password", authUser.passwordHash);
 
                     using var reader = await sqlCommand.ExecuteReaderAsync();
 
@@ -105,9 +106,9 @@ namespace skillhub.RepositeryLayer
                             _ => "Unknown"
                         };
 
-                        if (PasswordHasher.VerifyPassword(userLogin.password, storedHash))
+                        if (PasswordHasher.VerifyPassword(authUser.passwordHash, storedHash))
                         {
-                            return JwtHelper.GenerateToken(userID, userLogin.email, userName, role, configuration);
+                            return JwtHelper.GenerateToken(userID, authUser.email, userName, role, configuration);
                         }
                         else
                         {

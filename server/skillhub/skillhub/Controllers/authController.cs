@@ -7,17 +7,17 @@ namespace skillhub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class authController : ControllerBase
     {
         public readonly UserInterfaceSL userInterface;
 
-        public UsersController(UserInterfaceSL userInterface)
+        public authController(UserInterfaceSL userInterface)
         {
             this.userInterface = userInterface;
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> AddUserRegister(User request)
+        public async Task<IActionResult> AddUserRegister(RegisterRequest request)
         {
             UserRegisterResponse response = new UserRegisterResponse();
 
@@ -66,7 +66,7 @@ namespace skillhub.Controllers
         {
             try
             {
-                bool exists = await userInterface.CheckEmailExists(checkEmail.email); 
+                bool exists = await userInterface.CheckEmailExists(checkEmail.email);
                 return Ok(new { exists });
             }
             catch (Exception ex)
@@ -76,11 +76,11 @@ namespace skillhub.Controllers
         }
 
         [HttpPost("check-username")]
-        public async Task<IActionResult> CheckUserName(checkUserName checkUserName) 
+        public async Task<IActionResult> CheckUserName(checkUserName checkUserName)
         {
             try
             {
-                bool exists = await userInterface.CheckUserNameExists(checkUserName.userName); 
+                bool exists = await userInterface.CheckUserNameExists(checkUserName.userName);
                 return Ok(new { exists });
             }
             catch (Exception ex)
@@ -88,5 +88,9 @@ namespace skillhub.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+       
+
+
     }
 }

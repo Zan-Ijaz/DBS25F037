@@ -13,9 +13,11 @@ namespace skillhub.ServiceLayer
             this.userInterface = userInterface;
         }
 
-        public async Task<UserRegisterResponse> AddUserRegister(User request)
+        public async Task<UserRegisterResponse> AddUserRegister(RegisterRequest request)
         {
             UserRegisterResponse response = new UserRegisterResponse();
+
+            
            
             if (string.IsNullOrWhiteSpace(request.email))
             {
@@ -47,9 +49,11 @@ namespace skillhub.ServiceLayer
                 return response;
             }
 
+            User newUser = new User(request.userName, request.email, request.passwordHash, request.roleID);
+
             try
             {
-                return await userInterface.RegisterUser(request);
+                return await userInterface.RegisterUser(newUser);
             }
             catch (Exception ex) {
                 response.isSuccess = false;
@@ -59,7 +63,8 @@ namespace skillhub.ServiceLayer
         }
         public async Task<string> AuthenticateUser(UserLogin userLogin)
         {
-            return await userInterface.AuthenticateUser(userLogin);
+            User authUser = new User(userLogin.email, userLogin.password);
+            return await userInterface.AuthenticateUser(authUser);
         }
 
         public Task<bool> CheckEmailExists(string email)

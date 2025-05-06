@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "skillhub.Controllers.UsersController",
+    "ContainingType": "skillhub.Controllers.authController",
     "Method": "CheckEmail",
-    "RelativePath": "api/Users/check-email",
+    "RelativePath": "api/auth/check-email",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -16,9 +16,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "skillhub.Controllers.UsersController",
+    "ContainingType": "skillhub.Controllers.authController",
     "Method": "CheckUserName",
-    "RelativePath": "api/Users/check-username",
+    "RelativePath": "api/auth/check-username",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -32,9 +32,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "skillhub.Controllers.UsersController",
+    "ContainingType": "skillhub.Controllers.authController",
     "Method": "ActionResult",
-    "RelativePath": "api/Users/login",
+    "RelativePath": "api/auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -48,19 +48,29 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "skillhub.Controllers.UsersController",
+    "ContainingType": "skillhub.Controllers.authController",
     "Method": "AddUserRegister",
-    "RelativePath": "api/Users/register",
+    "RelativePath": "api/auth/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "skillhub.CommonLayer.Model.Users.User",
+        "Type": "skillhub.CommonLayer.Model.Users.RegisterRequest",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.VehiclesController",
+    "Method": "StartEngines",
+    "RelativePath": "api/Vehicles/start-engines",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]
