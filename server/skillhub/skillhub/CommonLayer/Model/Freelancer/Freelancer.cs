@@ -1,6 +1,8 @@
-﻿namespace skillhub.CommonLayer.Model.Freelancer
+﻿using skillhub.CommonLayer.Model.Users;
+
+namespace skillhub.CommonLayer.Model.Freelancer
 {
-    public class Freelancer
+    public class Freelancer : User
     {
         public int freelancerID { get; private set; }
 

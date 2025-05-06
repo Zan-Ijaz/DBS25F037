@@ -1,6 +1,6 @@
 ﻿using skillhub.CommonLayer.Model.Users;
 
-namespace skillhub.Interfaces
+namespace skillhub.Interfaces.IServiceLayer
 {
     public interface UserInterfaceSL
     {

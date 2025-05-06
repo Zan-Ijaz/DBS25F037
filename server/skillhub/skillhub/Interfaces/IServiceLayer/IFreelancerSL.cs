@@ -1,6 +1,6 @@
 ﻿using skillhub.CommonLayer.Model.Freelancer;
 
-namespace skillhub.Interfaces
+namespace skillhub.Interfaces.IServiceLayer
 {
     public interface IFreelancerSL
     {

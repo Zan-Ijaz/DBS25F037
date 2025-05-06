@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using Azure;
 using skillhub.CommonLayer.Model.Users;
-using skillhub.Interfaces;
+using skillhub.Interfaces.IRepositryLayer;
+using skillhub.Interfaces.IServiceLayer;
 
 namespace skillhub.ServiceLayer
 {

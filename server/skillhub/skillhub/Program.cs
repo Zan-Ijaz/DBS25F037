@@ -2,10 +2,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using skillhub.Interfaces;
 using skillhub.RepositeryLayer;
 using skillhub.ServiceLayer;
 using skillhub.Helpers;
+using skillhub.Interfaces.IRepositryLayer;
+using skillhub.Interfaces.IServiceLayer;
 
 var builder = WebApplication.CreateBuilder(args);
 

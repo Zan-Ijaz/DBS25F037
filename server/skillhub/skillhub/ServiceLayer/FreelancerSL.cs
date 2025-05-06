@@ -1,5 +1,6 @@
 ﻿using skillhub.CommonLayer.Model.Freelancer;
-using skillhub.Interfaces;
+using skillhub.Interfaces.IRepositryLayer;
+using skillhub.Interfaces.IServiceLayer;
 
 namespace skillhub.ServiceLayer
 {

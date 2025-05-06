@@ -1,6 +1,6 @@
 ﻿using skillhub.CommonLayer.Model.Users;
 
-namespace skillhub.Interfaces
+namespace skillhub.Interfaces.IRepositryLayer
 {
     public interface UserInterfaceRL
     {
@@ -15,5 +15,5 @@ namespace skillhub.Interfaces
         public Task<bool> profileInformation(User personalInformation);
 
         public Task<bool> AddPersonalInformation(User personalInformation);
-     }
+    }
 }

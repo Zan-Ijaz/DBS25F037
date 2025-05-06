@@ -7,7 +7,7 @@ using skillhub.Common_Utilities;
 using skillhub.Common_Utility;
 using skillhub.CommonLayer.Model.Users;
 using skillhub.Helpers;
-using skillhub.Interfaces;
+using skillhub.Interfaces.IRepositryLayer;
 
 namespace skillhub.RepositeryLayer
 {

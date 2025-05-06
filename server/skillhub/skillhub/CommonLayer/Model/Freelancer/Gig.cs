@@ -1,6 +1,7 @@
 ﻿namespace skillhub.CommonLayer.Model.Freelancer
 {
-    public class Gigs
+    public class Gig
     {
+
     }
 }

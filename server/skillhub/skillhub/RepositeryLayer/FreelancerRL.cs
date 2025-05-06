@@ -4,7 +4,7 @@ using MySqlConnector;
 using skillhub.Common_Utilities;
 using skillhub.CommonLayer.Model.Freelancer;
 using skillhub.Helpers;
-using skillhub.Interfaces;
+using skillhub.Interfaces.IRepositryLayer;
 
 namespace skillhub.RepositeryLayer
 {

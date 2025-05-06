@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using skillhub.CommonLayer.Model.Users;
-using skillhub.Interfaces;
+using skillhub.Interfaces.IServiceLayer;
 
 namespace skillhub.Controllers
 {
