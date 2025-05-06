@@ -25,4 +25,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CommonLayer\Model\Profile\" />
+  </ItemGroup>
+
 </Project>

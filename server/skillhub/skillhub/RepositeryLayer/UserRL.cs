@@ -185,6 +185,31 @@ namespace skillhub.RepositeryLayer
                 return false;
             }
         }
+
+        //public async Task<bool> AddPersonalInformation(User persnalInformation)
+        //{
+        //    await using var mysqlconnection = dbConnectionFactory.CreateConnection();
+
+        //    try
+        //    {
+        //        if(mysqlconnection.State != System.Data.ConnectionState.Open)
+        //        {
+        //            await mysqlconnection.OpenAsync();
+        //        }
+
+        //        string commandText = commandType
+        //    }
+        //}
+
+        public Task<bool> profileInformation(User personalInformation)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> AddPersonalInformation(User personalInformation)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

@@ -2,7 +2,6 @@
 
 public class User
 {
-    [Key]
     public int userID { get; private set; }
 
     public string firstName { get; private set; }
@@ -17,7 +16,10 @@ public class User
     public string bio { get; private set; }
     public string phone { get; private set; }
     public string country { get; private set; }
+
+    public string language { get; private set; }
     public string userName { get; private set; }
+
 
 
     public User(string userName, string email, string passwordHash, int roleID)
@@ -35,5 +37,17 @@ public class User
     {
         this.email = email; 
         this.passwordHash = passwordHash;
+    }
+
+    public User(int userID, string firstName, string lastName, string phone, string country , string profilePicture, string bio, string language)
+    {
+        this.userID = userID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.country = country;
+        this.profilePicture = profilePicture;
+        this.bio = bio;
+        this.language = language;
     }
 }

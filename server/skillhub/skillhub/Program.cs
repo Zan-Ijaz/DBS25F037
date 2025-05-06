@@ -24,6 +24,8 @@ builder.Services.AddControllers();
 #region Dependency Injection
 builder.Services.AddScoped<UserInterfaceSL, UserSL>();
 builder.Services.AddScoped<UserInterfaceRL, UserRL>();
+builder.Services.AddScoped<IFreelancerSL, FreelancerSL>();
+builder.Services.AddScoped<IFreelancerRL, FreelancerRL>();
 #endregion
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

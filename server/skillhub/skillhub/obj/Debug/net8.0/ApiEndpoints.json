@@ -49,6 +49,22 @@
   },
   {
     "ContainingType": "skillhub.Controllers.authController",
+    "Method": "AddPersonalInformation",
+    "RelativePath": "api/auth/personal-information",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "personalInformation",
+        "Type": "skillhub.CommonLayer.Model.Users.PersonalInformation",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.authController",
     "Method": "AddUserRegister",
     "RelativePath": "api/auth/register",
     "HttpMethod": "POST",
@@ -58,6 +74,22 @@
       {
         "Name": "request",
         "Type": "skillhub.CommonLayer.Model.Users.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.freelancerController",
+    "Method": "AddFreelancerInformation",
+    "RelativePath": "api/freelancer/add_Freelancer_information",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "freelancerRequest",
+        "Type": "skillhub.CommonLayer.Model.Freelancer.FreelancerRequest",
         "IsRequired": true
       }
     ],

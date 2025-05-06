@@ -15,9 +15,15 @@
 				SELECT userID, passwordHash, userName, roleID from user WHERE email = @email;
 			]]>		
 	</AuthenticateUser>
-		<UserNameExists>
+	<UserNameExists>
 			<![CDATA[
 				SELECT COUNT(*) FROM user WHERE userName = @userName; 
 		]]>
-		</UserNameExists>
+	</UserNameExists>
+	<FreelancerInformation>
+		<![CDATA[
+			INSERT INTO `freelancerprofile` (userid ,gender, education, language) VALUES(@userID, @gender, @education, @language);
+		]]>
+	</FreelancerInformation>
+	
 </Queries>

@@ -11,7 +11,10 @@ namespace skillhub.Interfaces
 
         public Task<bool> CheckUserNameExists(string userName);
 
-        
+        public Task<bool> AddPersonalInformation(PersonalInformation personal_Information);
+
+
+
 
     }
 }

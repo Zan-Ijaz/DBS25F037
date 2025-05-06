@@ -76,5 +76,47 @@ namespace skillhub.ServiceLayer
             return userInterface.CheckUserNameExists(userName);
         }
 
+        public async Task<bool> AddPersonalInformation(PersonalInformation personalInformation)
+        {
+            if (string.IsNullOrWhiteSpace(personalInformation.firstName))
+                return false;
+
+            if (string.IsNullOrWhiteSpace(personalInformation.lastName))
+                return false;
+
+            if (string.IsNullOrWhiteSpace(personalInformation.phone) || personalInformation.phone.Length != 11)
+                return false;
+
+            if (string.IsNullOrWhiteSpace(personalInformation.country))
+                return false;
+
+            if (string.IsNullOrWhiteSpace(personalInformation.profilePicture))
+                return false;
+
+            if (string.IsNullOrWhiteSpace(personalInformation.bio))
+                return false;
+
+            if (string.IsNullOrWhiteSpace(personalInformation.language))
+                return false;
+
+            // Create User object with constructor (ensure you’ve defined it)
+            User userInformation = new User(
+                personalInformation.userID,
+                personalInformation.firstName,
+                personalInformation.lastName,
+                personalInformation.phone,
+                personalInformation.country,
+                personalInformation.profilePicture,
+                personalInformation.bio,
+                personalInformation.language
+            );
+
+            // Call to service/repository
+            return await userInterface.AddPersonalInformation(userInformation);
+        }
+
+
+
+
     }
 }

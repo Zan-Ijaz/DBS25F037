@@ -89,7 +89,21 @@ namespace skillhub.Controllers
             }
         }
 
-       
+        [HttpPost("personal-information")]
+        public async Task<IActionResult> AddPersonalInformation(PersonalInformation personalInformation)
+        {
+            try
+            {
+                var result = await userInterface.AddPersonalInformation(personalInformation);
+                return Ok(new { message = "Information saved successfully", data = result });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+
 
 
     }

@@ -40,5 +40,13 @@ namespace skillhub.Common_Utilities
                 return configuration["userNameExists"];
             }
         }
+
+        public static string freelancerInformation
+        {
+            get
+            {
+                return configuration["FreelancerInformation"];
+            }
+        }
     }
 }

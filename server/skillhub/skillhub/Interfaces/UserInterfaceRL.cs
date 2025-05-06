@@ -11,5 +11,9 @@ namespace skillhub.Interfaces
         public Task<bool> CheckEmailExists(string email);
 
         public Task<bool> CheckUserNameExists(string userName);
-    }
+
+        public Task<bool> profileInformation(User personalInformation);
+
+        public Task<bool> AddPersonalInformation(User personalInformation);
+     }
 }
