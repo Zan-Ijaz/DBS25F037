@@ -42,9 +42,19 @@
 	</DeleteWallet>
 	<MakeWallet>
 		<![CDATA[
-		Insert into wallet(userID,coinbalance,Status) values (@userID,@coinbalance,@status); 
+		Insert into wallet(userID,coinbalance,Status) values (@userID,@coinbalance,'active'); 
 		]]>
 	</MakeWallet>
+	<UpdateWallet>
+		<![CDATA[
+		Update wallet Set coinbalance=@coinbalance,Status=@status,lastUpdated=current_timestamp() where walletid=@walletID;
+		]]>
+	</UpdateWallet>
+	<FindWallet>
+		<![CDATA[
+		Select * from wallet where userid=@userID;
+		]]>
+	</FindWallet>
 	<BlockUser>
 		<![CDATA[
 		Insert into blocked(blockerid,blockeduserid,reason) values(@blockerId,@blockedUserId,@reason);

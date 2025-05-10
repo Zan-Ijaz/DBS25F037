@@ -62,6 +62,20 @@ namespace skillhub.Common_Utilities
                 return configuration["MakeWallet"];
             }
         }
+        public static string updateWallet
+        {
+            get
+            {
+                return configuration["UpdateWallet"];
+            }
+        }
+        public static string findWallet
+        {
+            get
+            {
+                return configuration["FindWallet"];
+            }
+        }
         public static string deleteMessage
         {
             get

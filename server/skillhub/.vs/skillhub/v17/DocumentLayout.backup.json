@@ -3,24 +3,48 @@
   "WorkspaceRootPath": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\controllers\\blockedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\controllers\\blockedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\sqlqueries.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\sqlqueries.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\servicelayer\\blockedsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\servicelayer\\blockedsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\interfaces\\iservicelayer\\iwalletsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\interfaces\\iservicelayer\\iwalletsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\repositerylayer\\blockedrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\repositerylayer\\blockedrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\controllers\\walletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\controllers\\walletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\blocked\\blocked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\blocked\\blocked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\users\\walletrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\users\\walletrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\blocked\\blockedrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\blocked\\blockedrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\users\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\users\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\users\\gigpackage.cs.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\users\\gigpackage.cs.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\users\\gigpackage||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\users\\gigpackage||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\repositerylayer\\walletrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\repositerylayer\\walletrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\interfaces\\irepositrylayer\\iwalletrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\interfaces\\irepositrylayer\\iwalletrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\servicelayer\\walletsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\servicelayer\\walletsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\common utility\\sqlqueries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\common utility\\sqlqueries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,66 +70,146 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "blockedController.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Controllers\\blockedController.cs",
-              "RelativeDocumentMoniker": "skillhub\\Controllers\\blockedController.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Controllers\\blockedController.cs",
-              "RelativeToolTip": "skillhub\\Controllers\\blockedController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAACcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:32:03.618Z",
+              "DocumentIndex": 6,
+              "Title": "GigPackage",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\GigPackage",
+              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Users\\GigPackage",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\GigPackage",
+              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Users\\GigPackage",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-10T12:34:08.169Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BlockedRL.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\BlockedRL.cs",
-              "RelativeDocumentMoniker": "skillhub\\RepositeryLayer\\BlockedRL.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\BlockedRL.cs",
-              "RelativeToolTip": "skillhub\\RepositeryLayer\\BlockedRL.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAuwE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:18:52.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BlockedSL.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\ServiceLayer\\BlockedSL.cs",
-              "RelativeDocumentMoniker": "skillhub\\ServiceLayer\\BlockedSL.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\ServiceLayer\\BlockedSL.cs",
-              "RelativeToolTip": "skillhub\\ServiceLayer\\BlockedSL.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T18:35:26.212Z",
+              "DocumentIndex": 5,
+              "Title": "GigPackage.cs.txt",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\GigPackage.cs.txt",
+              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Users\\GigPackage.cs.txt",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\GigPackage.cs.txt",
+              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Users\\GigPackage.cs.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-05-10T12:32:29.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Blocked.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Blocked\\Blocked.cs",
-              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Blocked\\Blocked.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Blocked\\Blocked.cs",
-              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Blocked\\Blocked.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
+              "Title": "WalletRequest.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\WalletRequest.cs",
+              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Users\\WalletRequest.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\WalletRequest.cs",
+              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Users\\WalletRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T17:32:59.407Z"
+              "WhenOpened": "2025-05-10T11:59:55.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "walletController.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Controllers\\walletController.cs",
+              "RelativeDocumentMoniker": "skillhub\\Controllers\\walletController.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Controllers\\walletController.cs",
+              "RelativeToolTip": "skillhub\\Controllers\\walletController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAwDcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T11:41:13.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WalletRL.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\WalletRL.cs",
+              "RelativeDocumentMoniker": "skillhub\\RepositeryLayer\\WalletRL.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\WalletRL.cs",
+              "RelativeToolTip": "skillhub\\RepositeryLayer\\WalletRL.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwEoAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T11:29:09.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WalletSL.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\ServiceLayer\\WalletSL.cs",
+              "RelativeDocumentMoniker": "skillhub\\ServiceLayer\\WalletSL.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\ServiceLayer\\WalletSL.cs",
+              "RelativeToolTip": "skillhub\\ServiceLayer\\WalletSL.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwBYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T11:27:11.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SqlQueries.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Common Utility\\SqlQueries.cs",
+              "RelativeDocumentMoniker": "skillhub\\Common Utility\\SqlQueries.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Common Utility\\SqlQueries.cs",
+              "RelativeToolTip": "skillhub\\Common Utility\\SqlQueries.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAswEAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T11:18:49.752Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "BlockedRequest.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Blocked\\BlockedRequest.cs",
-              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Blocked\\BlockedRequest.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Blocked\\BlockedRequest.cs",
-              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Blocked\\BlockedRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Title": "Wallet.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\Wallet.cs",
+              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Users\\Wallet.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\Wallet.cs",
+              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Users\\Wallet.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowAQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T18:50:00.498Z"
+              "WhenOpened": "2025-05-10T11:14:48.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SqlQueries.xml",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\SqlQueries.xml",
+              "RelativeDocumentMoniker": "skillhub\\SqlQueries.xml",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\SqlQueries.xml",
+              "RelativeToolTip": "skillhub\\SqlQueries.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-05-10T11:16:54.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IWalletRL.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IRepositryLayer\\IWalletRL.cs",
+              "RelativeDocumentMoniker": "skillhub\\Interfaces\\IRepositryLayer\\IWalletRL.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IRepositryLayer\\IWalletRL.cs",
+              "RelativeToolTip": "skillhub\\Interfaces\\IRepositryLayer\\IWalletRL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T11:12:50.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IWalletSL.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IServiceLayer\\IWalletSL.cs",
+              "RelativeDocumentMoniker": "skillhub\\Interfaces\\IServiceLayer\\IWalletSL.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IServiceLayer\\IWalletSL.cs",
+              "RelativeToolTip": "skillhub\\Interfaces\\IServiceLayer\\IWalletSL.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAEwAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T11:12:21.491Z",
+              "EditorCaption": ""
             }
           ]
         }
