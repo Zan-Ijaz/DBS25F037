@@ -1,26 +1,24 @@
 ﻿using MySqlConnector;
 using skillhub.Common_Utilities;
+using skillhub.CommonLayer.Model.Blocked;
 using skillhub.CommonLayer.Model.Freelancer;
-using skillhub.CommonLayer.Model;
 using skillhub.Helpers;
 using skillhub.Interfaces.IRepositryLayer;
-using MySqlConnector;
-using skillhub.Models;
+using skillhub.ServiceLayer;
 
 namespace skillhub.RepositeryLayer
 {
-    public class MessageRL:IMessageRL
+    public class BlockedRL:IBlockedRL
     {
         private readonly IConfiguration configuration;
         private readonly IDbConnectionFactory dbConnectionFactory;
 
-        public MessageRL(IConfiguration configuration, IDbConnectionFactory dbConnectionFactory)
+        public BlockedRL(IConfiguration configuration, IDbConnectionFactory dbConnectionFactory)
         {
             this.configuration = configuration;
             this.dbConnectionFactory = dbConnectionFactory;
         }
-
-        public async Task<bool> DeleteMessage(int messageid)
+        public async Task<bool> BlockUser(Blocked blocked)
         {
             await using var mySqlConnection = dbConnectionFactory.CreateConnection();
 
@@ -31,28 +29,33 @@ namespace skillhub.RepositeryLayer
                     await mySqlConnection.OpenAsync();
                 }
 
-                string commandText = SqlQueries.deleteMessage;
+                string commandText = SqlQueries.blockUser;
 
                 using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
                     sqlCommand.CommandTimeout = 180;
 
-                    sqlCommand.Parameters.AddWithValue("@messageId", messageid);
+                    sqlCommand.Parameters.AddWithValue("@blockerId", blocked.blocker.userID);
+                    sqlCommand.Parameters.AddWithValue("@blockedUserId", blocked.blockedUser.userID);
+                    sqlCommand.Parameters.AddWithValue("@reason", blocked.reason);
 
                     await sqlCommand.ExecuteNonQueryAsync();
 
                     return true;
 
                 }
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
+
+
         }
 
-        public async Task<bool> SendMessage(Message message)
+        public async Task<bool> unBlockUser(int blockerid, int blockeduserid)
         {
             await using var mySqlConnection = dbConnectionFactory.CreateConnection();
 
@@ -63,28 +66,27 @@ namespace skillhub.RepositeryLayer
                     await mySqlConnection.OpenAsync();
                 }
 
-                string commandText = SqlQueries.sendmessage;
+                string commandText = SqlQueries.unblockUser;
 
                 using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
                     sqlCommand.CommandTimeout = 180;
 
-                    sqlCommand.Parameters.AddWithValue("@senderId", message.senderId);
-                    sqlCommand.Parameters.AddWithValue("@receiverId", message.receiverId);
-                    sqlCommand.Parameters.AddWithValue("@messageText", message.messageText);
+                    sqlCommand.Parameters.AddWithValue("@blockerId", blockerid);
+                    sqlCommand.Parameters.AddWithValue("@blockedUserId", blockeduserid);
 
                     await sqlCommand.ExecuteNonQueryAsync();
 
                     return true;
 
                 }
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
         }
-        
     }
 }

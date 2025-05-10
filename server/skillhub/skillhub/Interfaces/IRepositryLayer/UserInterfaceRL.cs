@@ -15,5 +15,6 @@ namespace skillhub.Interfaces.IRepositryLayer
         public Task<bool> profileInformation(User personalInformation);
 
         public Task<bool> AddPersonalInformation(User personalInformation);
+        public Task<User> findUser(int userid);
     }
 }

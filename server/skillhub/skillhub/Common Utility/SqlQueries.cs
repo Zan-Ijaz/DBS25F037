@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace skillhub.Common_Utilities
 {
@@ -61,6 +62,46 @@ namespace skillhub.Common_Utilities
                 return configuration["MakeWallet"];
             }
         }
+        public static string deleteMessage
+        {
+            get
+            {
+                return configuration["DeleteMessage"];
+            }
+
+        }
+        public static string deleteWallet
+        {
+            get
+            {
+                return configuration["DeleteWallet"];
+            }
+
+        }
+        public static string blockUser
+        {
+            get
+            {
+                return configuration["BlockUser"];
+            }
+        }
+        public static string unblockUser
+        {
+            get
+            {
+                return configuration["Unblock"];
+            }
+        }
+        public static string FindUser 
+        { 
+            get
+            { 
+                return configuration["FindUser"];
+            }
+        }
+
+
+
 
     }
 }

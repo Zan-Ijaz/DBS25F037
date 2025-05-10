@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Metrics;
+using System.Numerics;
 
 public class User
 {
@@ -20,8 +22,25 @@ public class User
     public string language { get; private set; }
     public string userName { get; private set; }
 
+    public User()
+    {
 
-
+    }
+    public User(int userID, string firstName, string lastName, string email, string passwordHash, string profilePicture,int roleID, string joinDate, string bio, string phone, string username, string country)
+    {
+        this.userID = userID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.profilePicture = profilePicture;
+        this.roleID = roleID;
+        this.joinDate = joinDate;
+        this.bio = bio;
+        this.phone = phone;
+        this.country = country;
+        this.userName = username;
+    }
     public User(string userName, string email, string passwordHash, int roleID)
     {
         this.userName = userName;

@@ -1,24 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using skillhub.CommonLayer.Model.Messages;
+using skillhub.CommonLayer.Model;
 using skillhub.CommonLayer.Model.Users;
 using skillhub.Interfaces.IServiceLayer;
 
 namespace skillhub.Controllers
 {
-   
 
-        [Route("api/[controller]")]
-        [ApiController]
-        public class walletController : Controller
-        {
-            private readonly IWalletSL walletInterface;
+
+    [Route("api/[controller]")]
+    [ApiController]
+    public class walletController : Controller
+    {
+        private readonly IWalletSL walletInterface;
 
         public walletController(IWalletSL walletInterface)
         {
             this.walletInterface = walletInterface;
         }
 
-                [HttpPost("create")]
+        [HttpPost("create")]
         public async Task<IActionResult> MakeWallet(WalletRequest request)
         {
             try
@@ -32,7 +32,7 @@ namespace skillhub.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        
     }
 }
 

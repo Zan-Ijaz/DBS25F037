@@ -33,6 +33,22 @@
   },
   {
     "ContainingType": "skillhub.Controllers.authController",
+    "Method": "FindUser",
+    "RelativePath": "api/auth/find-user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.authController",
     "Method": "ActionResult",
     "RelativePath": "api/auth/login",
     "HttpMethod": "POST",
@@ -80,6 +96,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "skillhub.Controllers.blockedController",
+    "Method": "BlockUser",
+    "RelativePath": "api/blocked/block_user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Request",
+        "Type": "skillhub.CommonLayer.Model.Blocked.BlockedRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.blockedController",
+    "Method": "unBlockUser",
+    "RelativePath": "api/blocked/Unblock_user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blockerid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "blockedid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "skillhub.Controllers.freelancerController",
     "Method": "AddFreelancerInformation",
     "RelativePath": "api/freelancer/add_Freelancer_information",
@@ -96,6 +149,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "skillhub.Controllers.MessagesController",
+    "Method": "DeleteMessage",
+    "RelativePath": "api/Messages/deleteMessage/{messageId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messageid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.MessagesController",
+    "Method": "SendMessage",
+    "RelativePath": "api/Messages/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "skillhub.CommonLayer.Model.MessageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "skillhub.Controllers.VehiclesController",
     "Method": "StartEngines",
     "RelativePath": "api/Vehicles/start-engines",
@@ -103,6 +188,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.walletController",
+    "Method": "MakeWallet",
+    "RelativePath": "api/wallet/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "skillhub.CommonLayer.Model.Users.WalletRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

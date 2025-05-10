@@ -2,7 +2,8 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using skillhub.Interfaces.IServiceLayer;
-using skillhub.CommonLayer.Model.Messages;
+using skillhub.CommonLayer.Model;
+using skillhub.Models;
 
 namespace skillhub.Controllers
 {
@@ -23,16 +24,30 @@ namespace skillhub.Controllers
             {
                 try
                 {
+                
                     var response = await messageInterface.SendMessage(request);
 
                     return Ok(new { message = "Message sent", data = response });
-                }
+            }
                 catch (Exception ex)
                 {
                     return BadRequest(ex.Message);
                 }
             }
+        [HttpDelete("deleteMessage/{messageId}")]
+        public async Task<IActionResult> DeleteMessage(int messageid)
+        {
+            try
+            {
+                var response = await messageInterface.DeleteMessage(messageid);
 
+                return Ok(new { message = "Message sent", data = response });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+    }
     
 }

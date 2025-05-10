@@ -25,5 +25,39 @@
 			INSERT INTO `freelancerprofile` (userid ,gender, education, language) VALUES(@userID, @gender, @education, @language);
 		]]>
 	</FreelancerInformation>
-	
+	<SendMessage>
+		<![CDATA[
+			Insert into message(senderID,receiverid,Messagetext) values (@senderid,@receiverid,@messagetext); 
+		]]>
+	</SendMessage>
+	<DeleteMessage>
+		<![CDATA[
+			Delete from message where messageid=@messageId; 
+		]]>
+	</DeleteMessage>
+	<DeleteWallet>
+		<![CDATA[
+			Delete from wallet where walletid=@walletId; 
+		]]>
+	</DeleteWallet>
+	<MakeWallet>
+		<![CDATA[
+		Insert into wallet(userID,coinbalance,Status) values (@userID,@coinbalance,@status); 
+		]]>
+	</MakeWallet>
+	<BlockUser>
+		<![CDATA[
+		Insert into blocked(blockerid,blockeduserid,reason) values(@blockerId,@blockedUserId,@reason);
+		]]>
+	</BlockUser>
+	<Unblock>
+		<![CDATA[
+		Delete From blocked where blockeduserId=@blockeduserId and blockerid=blockerid;
+		]]> 
+	</Unblock>
+	<FindUser>
+		<![CDATA[
+		SELECT * FROM user WHERE userID = @userId;
+		]]>
+	</FindUser>
 </Queries>

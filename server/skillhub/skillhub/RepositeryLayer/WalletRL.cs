@@ -1,6 +1,7 @@
-﻿using MySqlConnector;
+﻿using Microsoft.Data.SqlClient;
+using MySqlConnector;
 using skillhub.Common_Utilities;
-using skillhub.CommonLayer.Model.Messages;
+using skillhub.CommonLayer.Model;
 using skillhub.CommonLayer.Model.Users;
 using skillhub.Helpers;
 using skillhub.Interfaces.IRepositryLayer;
@@ -17,6 +18,8 @@ namespace skillhub.RepositeryLayer
             this.configuration = configuration;
             this.dbConnectionFactory = dbConnectionFactory;
         }
+
+        
 
         public async Task<bool> MakeWallet(Wallet wallet)
         {

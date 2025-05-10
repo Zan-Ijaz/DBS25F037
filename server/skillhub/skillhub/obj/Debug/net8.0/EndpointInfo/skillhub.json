@@ -160,6 +160,89 @@
         }
       }
     },
+    "/api/auth/find-user": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/blocked/block_user": {
+      "post": {
+        "tags": [
+          "blocked"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockedRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockedRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/blocked/Unblock_user": {
+      "post": {
+        "tags": [
+          "blocked"
+        ],
+        "parameters": [
+          {
+            "name": "blockerid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "blockedid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/freelancer/add_Freelancer_information": {
       "post": {
         "tags": [
@@ -191,6 +274,60 @@
         }
       }
     },
+    "/api/Messages/send": {
+      "post": {
+        "tags": [
+          "Messages"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Messages/deleteMessage/{messageId}": {
+      "delete": {
+        "tags": [
+          "Messages"
+        ],
+        "parameters": [
+          {
+            "name": "messageid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Vehicles/start-engines": {
       "get": {
         "tags": [
@@ -202,10 +339,63 @@
           }
         }
       }
+    },
+    "/api/wallet/create": {
+      "post": {
+        "tags": [
+          "wallet"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WalletRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WalletRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WalletRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "BlockedRequest": {
+        "type": "object",
+        "properties": {
+          "blockerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blockedUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blockedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "FreelancerRequest": {
         "type": "object",
         "properties": {
@@ -223,6 +413,31 @@
           "language": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MessageRequest": {
+        "type": "object",
+        "properties": {
+          "senderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "receiverId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "messageText": {
+            "type": "string",
+            "nullable": true
+          },
+          "sentTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isRead": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -297,6 +512,32 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WalletRequest": {
+        "type": "object",
+        "properties": {
+          "coinbalance": {
+            "type": "number",
+            "format": "float",
+            "readOnly": true
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "userID": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
           }
         },
         "additionalProperties": false

@@ -116,8 +116,9 @@ namespace skillhub.ServiceLayer
             return await userInterface.AddPersonalInformation(userInformation);
         }
 
-
-
-
+        public Task<User> findUser(int userid)
+        {
+            return userInterface.findUser(userid);
+        }
     }
 }

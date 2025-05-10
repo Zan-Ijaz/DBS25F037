@@ -27,6 +27,13 @@ builder.Services.AddScoped<UserInterfaceSL, UserSL>();
 builder.Services.AddScoped<UserInterfaceRL, UserRL>();
 builder.Services.AddScoped<IFreelancerSL, FreelancerSL>();
 builder.Services.AddScoped<IFreelancerRL, FreelancerRL>();
+builder.Services.AddScoped<IMessageSL, MessageSL>();
+builder.Services.AddScoped<IMessageRL, MessageRL>();
+builder.Services.AddScoped<IWalletSL, WalletSL>();
+builder.Services.AddScoped<IWalletRL, WalletRL>();
+builder.Services.AddScoped<IBlockedRL, BlockedRL>();
+builder.Services.AddScoped<IBlockedSL, BlockedSL>();
+
 #endregion
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

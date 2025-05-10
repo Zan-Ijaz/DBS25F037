@@ -210,6 +210,59 @@ namespace skillhub.RepositeryLayer
         {
             throw new NotImplementedException();
         }
+
+        public async Task<User> findUser(int userid)
+        {
+
+            await using var mySqlConnection = dbConnectionFactory.CreateConnection();
+
+            try
+            {
+                if (mySqlConnection.State != System.Data.ConnectionState.Open)
+                {
+                    await mySqlConnection.OpenAsync();
+                }
+
+                string commandText = SqlQueries.FindUser;
+
+                using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
+                {
+                    sqlCommand.CommandType = System.Data.CommandType.Text;
+                    sqlCommand.CommandTimeout = 180;
+
+                    sqlCommand.Parameters.AddWithValue("@userId", userid);
+                    using (var reader = await sqlCommand.ExecuteReaderAsync())
+                    {
+                        if (reader.Read())
+                        {
+
+                            return new User(
+                                (int)reader["userID"],
+                                reader["firstName"].ToString(),
+                                reader["lastName"].ToString(),
+                                reader["email"].ToString(),
+                                reader["passwordHash"].ToString(),
+                                reader["profilePicture"].ToString(),
+                                (int)reader["roleID"],
+                                reader["joinDate"].ToString(),
+                                reader["bio"].ToString(),
+                                reader["phone"].ToString(),
+                                reader["username"].ToString(),
+                                reader["country"].ToString()
+                            );
+                        }
+                        else
+                            return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
     }
 
 }
