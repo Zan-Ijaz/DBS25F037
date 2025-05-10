@@ -29,8 +29,4 @@
     <Folder Include="CommonLayer\Model\Profile\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="CommonLayer\Model\Users\GigPackage.cs" />
-  </ItemGroup>
-
 </Project>

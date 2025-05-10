@@ -15,9 +15,19 @@ namespace skillhub.ServiceLayer
 
         public Task<bool> AddFreelancerInformation(FreelancerRequest freelancerRequest)
         {
-            Freelancer freelancerInformation = new Freelancer(freelancerRequest.userID ,freelancerRequest.gender, freelancerRequest.education, freelancerRequest.language);
+            Freelancer freelancerInformation = new Freelancer(freelancerRequest.gender, freelancerRequest.education, freelancerRequest.language);
 
             return freelancer.AddFreelancerInformation(freelancerInformation);
+        }
+
+        public Task<Freelancer> findFreelancer(int freelancerid)
+        {
+            return freelancer.findFreelancer(freelancerid);
+        }
+
+        public Task<List<Freelancer>> getFreelancerList()
+        {
+            return freelancer.getFreelancerList(); 
         }
     }
 }

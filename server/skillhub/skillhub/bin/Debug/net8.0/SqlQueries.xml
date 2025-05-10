@@ -30,6 +30,16 @@
 			Insert into message(senderID,receiverid,Messagetext) values (@senderid,@receiverid,@messagetext); 
 		]]>
 	</SendMessage>
+	<RetriveMsgbysender>
+		<![CDATA[
+		SELECT * FROM message where senderId=@senderid;
+		]]>
+	</RetriveMsgbysender>
+	<RetriveMsgbyreceiver>
+	<![CDATA[
+		SELECT * FROM message where receiverId=@receiverid;
+		]]>
+	</RetriveMsgbyreceiver>
 	<DeleteMessage>
 		<![CDATA[
 			Delete from message where messageid=@messageId; 
@@ -70,4 +80,14 @@
 		SELECT * FROM user WHERE userID = @userId;
 		]]>
 	</FindUser>
+	<FindFreelancer>
+		<![CDATA[
+		Select * from  freelancerprofile where freelancerID=@freelancerID
+		]]>
+	</FindFreelancer>
+	<FetchFreelancers>
+		<![CDATA[
+		SELECT * FROM freelancerprofile;
+		]]>
+	</FetchFreelancers>
 </Queries>

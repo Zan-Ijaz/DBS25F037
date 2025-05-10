@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Metrics;
 using System.Numerics;
+using skillhub.CommonLayer.Model.Users;
+using skillhub.Models;
 
 public class User
 {
@@ -19,11 +21,31 @@ public class User
     public string phone { get; private set; }
     public string country { get; private set; }
 
+    public Wallet Wallet { get; private set; }
+    public List<Message> sentMEssages { get; private set; }
+    public List<Message> receivedMessage {  get; private set; }
     public string language { get; private set; }
     public string userName { get; private set; }
 
     public User()
     {
+
+    }
+    public User (User user)
+    {
+        this.userID = user.userID;
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
+        this.email = user.email;
+        this.passwordHash = user.passwordHash;
+        this.profilePicture = user.profilePicture;
+        this.roleID = user.roleID;
+        this.joinDate = user.joinDate;
+        this.bio = user.bio;
+        this.phone = user.phone;
+        this.country = user.country;
+        this.userName = user.userName;
+
 
     }
     public User(int userID, string firstName, string lastName, string email, string passwordHash, string profilePicture,int roleID, string joinDate, string bio, string phone, string username, string country)

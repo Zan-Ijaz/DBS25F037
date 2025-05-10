@@ -149,6 +149,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "skillhub.Controllers.freelancerController",
+    "Method": "FindFreelancers",
+    "RelativePath": "api/freelancer/Find_freelancer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "freelancerid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.freelancerController",
+    "Method": "GetAllFreelancers",
+    "RelativePath": "api/freelancer/Get_freelancers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "skillhub.Controllers.MessagesController",
     "Method": "DeleteMessage",
     "RelativePath": "api/Messages/deleteMessage/{messageId}",
@@ -160,6 +186,38 @@
         "Name": "messageid",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.MessagesController",
+    "Method": "RetriveMessagebyReceiver",
+    "RelativePath": "api/Messages/Retrive_Msg_byReceiver",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Receiverid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.MessagesController",
+    "Method": "RetriveMessagebySender",
+    "RelativePath": "api/Messages/Retrive_Msg_bySender",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "senderid",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

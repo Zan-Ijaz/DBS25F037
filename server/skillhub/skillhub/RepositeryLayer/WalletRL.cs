@@ -102,7 +102,6 @@ namespace skillhub.RepositeryLayer
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
                     sqlCommand.CommandTimeout = 180;
-
                     sqlCommand.Parameters.AddWithValue("@userId", userId);
 
                     using (var reader = await sqlCommand.ExecuteReaderAsync())

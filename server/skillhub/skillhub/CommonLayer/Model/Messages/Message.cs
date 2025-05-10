@@ -12,7 +12,7 @@ namespace skillhub.Models
 
         public Message(int senderId, int receiverId, string messageText)
         {
-            if (!Validate(messageText))
+            if (!Validate(messageText) && senderId!=receiverId)
             {
                 throw new ArgumentException("Message text must be between 5 and 255 characters.");
             }
@@ -20,11 +20,12 @@ namespace skillhub.Models
             this.senderId = senderId;
             this.receiverId = receiverId;
             this.messageText = messageText;
+            this.isRead = false;
         }
-        public Message(int messageid, int senderid, int receiverId, string messageText, DateTime sentTime, bool isRead)
+        public Message(int messageid, int senderId, int receiverId, string messageText, DateTime sentTime, bool isRead)
         {
             this.messageId = messageid;
-            this.senderId = senderid;
+            this.senderId = senderId;
             this.receiverId = receiverId;
             this.messageText = messageText;
             this.sentTime = sentTime;

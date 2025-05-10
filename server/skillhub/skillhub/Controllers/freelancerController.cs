@@ -13,12 +13,12 @@ namespace skillhub.Controllers
 
         public freelancerController(IFreelancerSL freelancer)
         {
-            this.freelancer = freelancer;         
+            this.freelancer = freelancer;
         }
 
 
         [HttpPost("add_Freelancer_information")]
-        
+
         public async Task<IActionResult> AddFreelancerInformation(FreelancerRequest freelancerRequest)
         {
             try
@@ -31,7 +31,32 @@ namespace skillhub.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        [HttpGet("Get_freelancers")]
+        public async Task<IActionResult> GetAllFreelancers()
+        {
+            try
+            {
+                var result = await freelancer.getFreelancerList();
+                return Ok(new { message = "Freelancers retrived saved successfully", data = result });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("Find_freelancer")]
+        public async Task<IActionResult> FindFreelancers(int freelancerid)
+        {
+            try
+            {
+                var result = await freelancer.findFreelancer(freelancerid);
+                return Ok(new { message = "Freelancer retrived saved successfully", data = result });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
 
     }

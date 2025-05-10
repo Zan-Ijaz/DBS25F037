@@ -4,8 +4,9 @@ using skillhub.CommonLayer.Model.Freelancer;
 using skillhub.CommonLayer.Model;
 using skillhub.Helpers;
 using skillhub.Interfaces.IRepositryLayer;
-using MySqlConnector;
 using skillhub.Models;
+using skillhub.CommonLayer.Model.Users;
+using skillhub.Interfaces.IServiceLayer;
 
 namespace skillhub.RepositeryLayer
 {
@@ -13,11 +14,13 @@ namespace skillhub.RepositeryLayer
     {
         private readonly IConfiguration configuration;
         private readonly IDbConnectionFactory dbConnectionFactory;
+        private readonly UserInterfaceSL userinterface;
 
-        public MessageRL(IConfiguration configuration, IDbConnectionFactory dbConnectionFactory)
+        public MessageRL(IConfiguration configuration, IDbConnectionFactory dbConnectionFactory, UserInterfaceSL userinterface)
         {
             this.configuration = configuration;
             this.dbConnectionFactory = dbConnectionFactory;
+            this.userinterface = userinterface;
         }
 
         public async Task<bool> DeleteMessage(int messageid)
@@ -49,6 +52,101 @@ namespace skillhub.RepositeryLayer
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        public async Task<List<Message>> RetriveMessagebyReceiver(int receiverid)
+        {
+
+            {
+                await using var mySqlConnection = dbConnectionFactory.CreateConnection();
+
+                try
+                {
+                    if (mySqlConnection.State != System.Data.ConnectionState.Open)
+                    {
+                        await mySqlConnection.OpenAsync();
+                    }
+
+                    string commandText = SqlQueries.retrivemessagebyreceiver;
+
+                    using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
+                    {
+                        sqlCommand.CommandType = System.Data.CommandType.Text;
+                        sqlCommand.CommandTimeout = 180;
+
+                        sqlCommand.Parameters.AddWithValue("@receiverId", receiverid);
+
+                        using (var reader = await sqlCommand.ExecuteReaderAsync())
+                        {
+                            List<Message> messages = new List<Message>();
+                            while (reader.Read())
+                            {
+                                int messageid = (int)reader["messageId"];
+                                int msgsenderid = (int)reader["senderId"];
+                                int msgreceiverid = (int)reader["receiverId"];
+                                string messageText = (string)reader["MessageText"];
+                                DateTime sentTime = (DateTime)reader["SentTime"];
+                                bool isRead = (bool)reader["IsRead"];
+                                messages.Add(new Message(messageid, msgsenderid, msgreceiverid, messageText, sentTime, isRead));
+
+                            }
+                            return messages;
+                        }
+                    }
+                }
+
+
+
+
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
+
+        public async Task<List<Message>> RetriveMessagebySender(int senderid)
+        {
+            await using var mySqlConnection = dbConnectionFactory.CreateConnection();
+
+            try
+            {
+                if (mySqlConnection.State != System.Data.ConnectionState.Open)
+                {
+                    await mySqlConnection.OpenAsync();
+                }
+
+                string commandText = SqlQueries.retrivemessagebysender;
+
+                using (MySqlCommand sqlCommand = new MySqlCommand(commandText, mySqlConnection))
+                {
+                    sqlCommand.CommandType = System.Data.CommandType.Text;
+                    sqlCommand.CommandTimeout = 180;
+
+                    sqlCommand.Parameters.AddWithValue("@senderId", senderid);
+
+                    using (var reader = await sqlCommand.ExecuteReaderAsync())
+                    {
+                        List<Message> messages = new List<Message>();
+                        while (reader.Read())
+                        {
+                            int messageid = (int)reader["messageId"];
+                            int msgsenderid = (int)reader["senderId"];
+                            int msgreceiverid = (int)reader["receiverId"];
+                            string messageText = (string)reader["MessageText"];
+                            DateTime sentTime = (DateTime)reader["SentTime"];
+                            bool isRead = (bool)reader["IsRead"];
+                            messages.Add(new Message(messageid, msgsenderid, msgreceiverid, messageText, sentTime, isRead));
+                        }
+                        return messages;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+
             }
         }
 

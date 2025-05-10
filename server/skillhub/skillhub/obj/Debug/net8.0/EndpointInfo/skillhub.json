@@ -274,6 +274,40 @@
         }
       }
     },
+    "/api/freelancer/Get_freelancers": {
+      "get": {
+        "tags": [
+          "freelancer"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/freelancer/Find_freelancer": {
+      "get": {
+        "tags": [
+          "freelancer"
+        ],
+        "parameters": [
+          {
+            "name": "freelancerid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Messages/send": {
       "post": {
         "tags": [
@@ -315,6 +349,50 @@
             "name": "messageid",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Messages/Retrive_Msg_bySender": {
+      "get": {
+        "tags": [
+          "Messages"
+        ],
+        "parameters": [
+          {
+            "name": "senderid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Messages/Retrive_Msg_byReceiver": {
+      "get": {
+        "tags": [
+          "Messages"
+        ],
+        "parameters": [
+          {
+            "name": "Receiverid",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -438,10 +516,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "blockedDate": {
-            "type": "string",
-            "format": "date-time"
-          },
           "reason": {
             "type": "string",
             "nullable": true
@@ -452,10 +526,6 @@
       "FreelancerRequest": {
         "type": "object",
         "properties": {
-          "userID": {
-            "type": "integer",
-            "format": "int32"
-          },
           "gender": {
             "type": "string"
           },
@@ -484,13 +554,6 @@
           "messageText": {
             "type": "string",
             "nullable": true
-          },
-          "sentTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isRead": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -572,18 +635,6 @@
       "WalletRequest": {
         "type": "object",
         "properties": {
-          "coinbalance": {
-            "type": "number",
-            "format": "float"
-          },
-          "lastUpdated": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
-          },
           "userID": {
             "type": "integer",
             "format": "int32"

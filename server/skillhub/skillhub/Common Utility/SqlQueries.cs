@@ -55,6 +55,20 @@ namespace skillhub.Common_Utilities
                 return configuration["SendMessage"];
             } 
         }
+        public static string retrivemessagebyreceiver
+        {
+            get
+            {
+                return configuration["RetriveMsgbyreceiver"];
+            }
+        }
+        public static string retrivemessagebysender
+        {
+            get
+            {
+                return configuration["RetriveMsgbysender"];
+            }
+        }
         public static string makeWallet
         {
             get
@@ -74,6 +88,20 @@ namespace skillhub.Common_Utilities
             get
             {
                 return configuration["FindWallet"];
+            }
+        }
+        public static string findFreelancer
+        {
+            get
+            {
+                return configuration["FindFreelancer"];
+            }
+        }
+        public static string getFreelancers
+        {
+            get
+            {
+                return configuration["FetchFreelancers"];
             }
         }
         public static string deleteMessage
