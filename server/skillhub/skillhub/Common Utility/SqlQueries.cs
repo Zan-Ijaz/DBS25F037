@@ -141,9 +141,67 @@ namespace skillhub.Common_Utilities
                 return configuration["FindUser"];
             }
         }
+        public static string GigUpdate
+        {
+            get
+            {
+                return configuration["GigUpdate"];
+            }
+        }
+        public static string GigInformation
+        {
+            get
+            {
+                return configuration["GigInformation"];
+            }
+        }
+
+            public static string GigDelete
+        {
+            get
+            {
+                return configuration["GigDelete"];
+            }
+        }
+        public static string findGig
+        {
+            get
+            {
+                return configuration["Findgig"];
+            }
+        }
+        public static string updateOrder
+        {
+            get
+            {
+                return configuration["UpdateOrder"];
+            }
+        }
+        public static string insertOrder
+        {
+            get
+            {
+                return configuration["InsertOrder"];
+            }
+        }
+        public static string deleteOrder
+        {
+            get
+            {
+                return configuration["DeleteOrder"];
+            }
+        }
+        public static string findOrder
+        {
+            get
+            {
+                return configuration["FindOrder"];
+            }
+        }
+    }
 
 
 
 
     }
-}
+

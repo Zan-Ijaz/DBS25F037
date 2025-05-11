@@ -3,72 +3,40 @@
   "WorkspaceRootPath": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\helpers\\dbconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\helpers\\dbconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\servicelayer\\ordersl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\servicelayer\\ordersl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\helpers\\idbconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\helpers\\idbconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\repositerylayer\\orderrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\repositerylayer\\orderrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\common utility\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\common utility\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\interfaces\\iservicelayer\\iordersl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\interfaces\\iservicelayer\\iordersl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\common utility\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\common utility\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\order\\orderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\order\\orderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\sqlqueries.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\sqlqueries.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\repositerylayer\\userrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\repositerylayer\\userrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\interfaces\\irepositrylayer\\iorderrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\interfaces\\irepositrylayer\\iorderrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\common utility\\sqlqueries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\common utility\\sqlqueries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\order\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\order\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\controllers\\freelancercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\controllers\\freelancercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\interfaces\\irepositrylayer\\imessagerl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\interfaces\\irepositrylayer\\imessagerl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\repositerylayer\\freelancerrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\repositerylayer\\freelancerrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\freelancer\\freelancer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\freelancer\\freelancer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\servicelayer\\freelancersl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\servicelayer\\freelancersl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\interfaces\\irepositrylayer\\ifreelancerrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\interfaces\\irepositrylayer\\ifreelancerrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\interfaces\\iservicelayer\\ifreelancersl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\interfaces\\iservicelayer\\ifreelancersl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\commonlayer\\model\\freelancer\\freelancerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\commonlayer\\model\\freelancer\\freelancerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|d:\\git\\forked repo\\dbs25f037\\server\\skillhub\\skillhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E45C4873-9FB4-4CD4-A8C7-3A7FE16D6288}|skillhub\\skillhub.csproj|solutionrelative:skillhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -95,165 +63,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\appsettings.json",
-              "RelativeDocumentMoniker": "skillhub\\appsettings.json",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\appsettings.json",
-              "RelativeToolTip": "skillhub\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAACaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-10T19:21:06.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PasswordHasher.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Common Utility\\PasswordHasher.cs",
-              "RelativeDocumentMoniker": "skillhub\\Common Utility\\PasswordHasher.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Common Utility\\PasswordHasher.cs",
-              "RelativeToolTip": "skillhub\\Common Utility\\PasswordHasher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "orderController.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Controllers\\orderController.cs",
+              "RelativeDocumentMoniker": "skillhub\\Controllers\\orderController.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Controllers\\orderController.cs",
+              "RelativeToolTip": "skillhub\\Controllers\\orderController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAqwD0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T19:19:08.498Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "JwtHelper.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Common Utility\\JwtHelper.cs",
-              "RelativeDocumentMoniker": "skillhub\\Common Utility\\JwtHelper.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Common Utility\\JwtHelper.cs",
-              "RelativeToolTip": "skillhub\\Common Utility\\JwtHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T19:18:58.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IDbConnectionFactory.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Helpers\\IDbConnectionFactory.cs",
-              "RelativeDocumentMoniker": "skillhub\\Helpers\\IDbConnectionFactory.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Helpers\\IDbConnectionFactory.cs",
-              "RelativeToolTip": "skillhub\\Helpers\\IDbConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T19:18:47.788Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DbConnectionFactory.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Helpers\\DbConnectionFactory.cs",
-              "RelativeDocumentMoniker": "skillhub\\Helpers\\DbConnectionFactory.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Helpers\\DbConnectionFactory.cs",
-              "RelativeToolTip": "skillhub\\Helpers\\DbConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T19:18:50.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IMessageRL.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IRepositryLayer\\IMessageRL.cs",
-              "RelativeDocumentMoniker": "skillhub\\Interfaces\\IRepositryLayer\\IMessageRL.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IRepositryLayer\\IMessageRL.cs",
-              "RelativeToolTip": "skillhub\\Interfaces\\IRepositryLayer\\IMessageRL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T18:38:12.834Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "freelancerController.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Controllers\\freelancerController.cs",
-              "RelativeDocumentMoniker": "skillhub\\Controllers\\freelancerController.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Controllers\\freelancerController.cs",
-              "RelativeToolTip": "skillhub\\Controllers\\freelancerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T18:15:11.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserRL.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\UserRL.cs",
-              "RelativeDocumentMoniker": "skillhub\\RepositeryLayer\\UserRL.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\UserRL.cs",
-              "RelativeToolTip": "skillhub\\RepositeryLayer\\UserRL.cs",
-              "ViewState": "AgIAAN0AAAAAAAAAAAAAAOkAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T18:12:53.064Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\User.cs",
-              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Users\\User.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Users\\User.cs",
-              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Users\\User.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB0AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T18:01:58.357Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FreelancerRL.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\FreelancerRL.cs",
-              "RelativeDocumentMoniker": "skillhub\\RepositeryLayer\\FreelancerRL.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\FreelancerRL.cs",
-              "RelativeToolTip": "skillhub\\RepositeryLayer\\FreelancerRL.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAAAHIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:49:24.324Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IFreelancerRL.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IRepositryLayer\\IFreelancerRL.cs",
-              "RelativeDocumentMoniker": "skillhub\\Interfaces\\IRepositryLayer\\IFreelancerRL.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IRepositryLayer\\IFreelancerRL.cs",
-              "RelativeToolTip": "skillhub\\Interfaces\\IRepositryLayer\\IFreelancerRL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:47:42.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IFreelancerSL.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IServiceLayer\\IFreelancerSL.cs",
-              "RelativeDocumentMoniker": "skillhub\\Interfaces\\IServiceLayer\\IFreelancerSL.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IServiceLayer\\IFreelancerSL.cs",
-              "RelativeToolTip": "skillhub\\Interfaces\\IServiceLayer\\IFreelancerSL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:46:17.5Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SqlQueries.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Common Utility\\SqlQueries.cs",
-              "RelativeDocumentMoniker": "skillhub\\Common Utility\\SqlQueries.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Common Utility\\SqlQueries.cs",
-              "RelativeToolTip": "skillhub\\Common Utility\\SqlQueries.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGcAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:35:35.144Z",
+              "WhenOpened": "2025-05-11T11:21:27.953Z",
               "EditorCaption": ""
             },
             {
@@ -264,46 +81,100 @@
               "RelativeDocumentMoniker": "skillhub\\SqlQueries.xml",
               "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\SqlQueries.xml",
               "RelativeToolTip": "skillhub\\SqlQueries.xml",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAAFQAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAAAIQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-05-10T17:25:21.079Z",
+              "WhenOpened": "2025-05-11T11:03:27.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FreelancerRequest.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Freelancer\\FreelancerRequest.cs",
-              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Freelancer\\FreelancerRequest.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Freelancer\\FreelancerRequest.cs",
-              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Freelancer\\FreelancerRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "OrderSL.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\ServiceLayer\\OrderSL.cs",
+              "RelativeDocumentMoniker": "skillhub\\ServiceLayer\\OrderSL.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\ServiceLayer\\OrderSL.cs",
+              "RelativeToolTip": "skillhub\\ServiceLayer\\OrderSL.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwC4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:21:29.987Z"
+              "WhenOpened": "2025-05-11T10:37:26.807Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FreelancerSL.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\ServiceLayer\\FreelancerSL.cs",
-              "RelativeDocumentMoniker": "skillhub\\ServiceLayer\\FreelancerSL.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\ServiceLayer\\FreelancerSL.cs",
-              "RelativeToolTip": "skillhub\\ServiceLayer\\FreelancerSL.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAIwBUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "OrderRL.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\OrderRL.cs",
+              "RelativeDocumentMoniker": "skillhub\\RepositeryLayer\\OrderRL.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\RepositeryLayer\\OrderRL.cs",
+              "RelativeToolTip": "skillhub\\RepositeryLayer\\OrderRL.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAUwG4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:21:13.403Z"
+              "WhenOpened": "2025-05-11T10:36:36.588Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Freelancer.cs",
-              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Freelancer\\Freelancer.cs",
-              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Freelancer\\Freelancer.cs",
-              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Freelancer\\Freelancer.cs",
-              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Freelancer\\Freelancer.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowCEAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "IOrderRL.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IRepositryLayer\\IOrderRL.cs",
+              "RelativeDocumentMoniker": "skillhub\\Interfaces\\IRepositryLayer\\IOrderRL.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IRepositryLayer\\IOrderRL.cs",
+              "RelativeToolTip": "skillhub\\Interfaces\\IRepositryLayer\\IOrderRL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T17:20:22.172Z"
+              "WhenOpened": "2025-05-11T09:37:10.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IOrderSL.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IServiceLayer\\IOrderSL.cs",
+              "RelativeDocumentMoniker": "skillhub\\Interfaces\\IServiceLayer\\IOrderSL.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Interfaces\\IServiceLayer\\IOrderSL.cs",
+              "RelativeToolTip": "skillhub\\Interfaces\\IServiceLayer\\IOrderSL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T09:34:50.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderRequest.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Order\\OrderRequest.cs",
+              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Order\\OrderRequest.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Order\\OrderRequest.cs",
+              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Order\\OrderRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T08:47:04.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Order\\Order.cs",
+              "RelativeDocumentMoniker": "skillhub\\CommonLayer\\Model\\Order\\Order.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\CommonLayer\\Model\\Order\\Order.cs",
+              "RelativeToolTip": "skillhub\\CommonLayer\\Model\\Order\\Order.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwCcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T21:11:50.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Program.cs",
+              "RelativeDocumentMoniker": "skillhub\\Program.cs",
+              "ToolTip": "D:\\Git\\Forked Repo\\DBS25F037\\server\\skillhub\\skillhub\\Program.cs",
+              "RelativeToolTip": "skillhub\\Program.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAABYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T21:10:22.325Z"
             }
           ]
         }

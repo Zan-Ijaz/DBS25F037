@@ -90,4 +90,38 @@
 		SELECT * FROM freelancerprofile;
 		]]>
 	</FetchFreelancers>
+	<GigUpdate>
+		<![CDATA[
+	UPDATE gig
+		SET
+		userId = @userId,
+		title = @title,
+		description = @description,
+		categoryId = @categoryId
+		WHERE gigId = @gigId;
+		]]>
+
+	</GigUpdate>
+	<GigInformation>
+		<![CDATA[
+	-- Insert into gig table first (you need to insert gig details before gig packages)
+		INSERT INTO gig (userid, title, description, categoryid)
+		VALUES (@userId, @title, @description, @categoryId);
+		
+		SELECT LAST_INSERT_ID();;
+		
+	
+]]>
+	</GigInformation>
+
+	<GigDelete>
+		<![CDATA[DELETE FROM gig WHERE GigId=@gigId;]]>
+		
+	</GigDelete>
+	<Findgig>
+		<![CDATA[
+		Select * from gig where GigId=@gigId
+		]]>
+	</Findgig>
+	
 </Queries>

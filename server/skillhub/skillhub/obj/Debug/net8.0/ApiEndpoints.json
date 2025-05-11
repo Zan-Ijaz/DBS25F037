@@ -175,6 +175,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "skillhub.Controllers.GigController",
+    "Method": "AddFreelancerGig",
+    "RelativePath": "api/Gig/add_Freelancer_Gig",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gigRequest",
+        "Type": "skillhub.CommonLayer.Model.Gigs.GigRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.GigController",
+    "Method": "DeleteGig",
+    "RelativePath": "api/Gig/DeleteGig",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.GigController",
+    "Method": "FindGid",
+    "RelativePath": "api/Gig/FindGig",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "skillhub.Controllers.GigController",
+    "Method": "UpdateGig",
+    "RelativePath": "api/Gig/UpdateGig",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "gigRequest",
+        "Type": "skillhub.CommonLayer.Model.Gigs.GigRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "skillhub.Controllers.MessagesController",
     "Method": "DeleteMessage",
     "RelativePath": "api/Messages/deleteMessage/{messageId}",

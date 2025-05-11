@@ -33,6 +33,8 @@ builder.Services.AddScoped<IWalletSL, WalletSL>();
 builder.Services.AddScoped<IWalletRL, WalletRL>();
 builder.Services.AddScoped<IBlockedRL, BlockedRL>();
 builder.Services.AddScoped<IBlockedSL, BlockedSL>();
+builder.Services.AddScoped<IGigRL, GigRL>();
+builder.Services.AddScoped<IGigSL, GigSL>();
 
 #endregion
 
